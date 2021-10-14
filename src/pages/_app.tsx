@@ -1,7 +1,7 @@
-import * as serviceWorker from "../../lib/serviceWorker";
+import * as serviceWorker from "../lib/serviceWorker";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import React, { useEffect } from "react";
-import { Chakra } from "../../lib/Chakra";
+import { Chakra } from "../lib/Chakra";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Chakra cookies={pageProps.cookies}>
       <Head>
-        <title>React App</title>
+        <title>Carles Moreno</title>
       </Head>
       <Component {...pageProps} />
     </Chakra>
