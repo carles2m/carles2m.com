@@ -7,7 +7,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
-import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
@@ -47,10 +46,7 @@ const Index: NextPage = () => (
       </List>
     </Main>
 
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
+    <Footer/>
   </Container>
 );
 
