@@ -1,9 +1,8 @@
 import * as serviceWorker from "../../lib/serviceWorker";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import React, { useEffect } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Chakra } from "../../lib/Chakra";
 import Head from "next/head";
-import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,12 +13,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <Chakra cookies={pageProps.cookies}>
       <Head>
         <title>React App</title>
       </Head>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Chakra>
   );
 }
 

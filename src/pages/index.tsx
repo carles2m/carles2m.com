@@ -7,16 +7,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
-
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { Main } from "../components/Main";
 import { NavBar } from "../components/NavBar";
+import { NextPage } from "next";
 import React from "react";
 
-const Index = () => (
+const Index: NextPage = () => (
   <Container height="100vh">
     <NavBar />
     <Hero />

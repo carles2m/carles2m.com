@@ -4,7 +4,6 @@ import {
     Button,
     Flex,
     HStack,
-    IconButton,
     Image,
     Link,
     Popover,
@@ -24,12 +23,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     <Link
         px={2}
         py={1}
-        rounded={"md"}
+        rounded="md"
         _hover={{
             textDecoration: "none",
             bg: useColorModeValue("gray.200", "gray.700"),
         }}
-        href={"#"}>
+        href="#">
         {children}
     </Link>
 );
@@ -37,30 +36,29 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const bgColor = useColorModeValue("gray.100", "gray.800");
 
     return (
-        <Box bg={bgColor} px={4} w="full">
-            <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-                <IconButton
-                    size={"md"}
-                    icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                    aria-label={"Open Menu"}
-                    display={{ md: "none" }}
+        <Box bg={useColorModeValue("gray.100", "gray.800")} px={4} w="full">
+            <Flex h={16} alignItems="center" justifyContent="space-between">
+                <Button
                     onClick={isOpen ? onClose : onOpen}
-                    bg={bgColor}
-                />
-                <HStack spacing={8} alignItems={"center"}>
+                    bg="unset"
+                    aria-label="Open Menu"
+                    display={{ md: "none" }}
+                >
+                    {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                </Button>
+                <HStack spacing={8} alignItems="center">
                     <Popover trigger="hover">
                         <PopoverTrigger>
-                            <Avatar src="profile.jpg" alt="Carles Moreno" />
+                            <Avatar src="profile.webp" alt="Carles Moreno" />
                         </PopoverTrigger>
                         <PopoverContent>
-                            <Image src="profile.jpg" alt="Carles Moreno" />
+                            <Image src="profile.webp" alt="Carles Moreno" />
                         </PopoverContent>
                     </Popover>
                     <HStack
-                        as={"nav"}
+                        as="nav"
                         spacing={4}
                         display={{ base: "none", md: "flex" }}>
                         {Links.map((link) => (
@@ -69,9 +67,13 @@ export const NavBar = () => {
                     </HStack>
                 </HStack>
 
-                <Flex alignItems={"center"}>
-                    <Stack direction={"row"} spacing={7}>
-                        <Button onClick={toggleColorMode} bg={bgColor}>
+                <Flex alignItems="center">
+                    <Stack direction="row" spacing={7}>
+                        <Button
+                            onClick={toggleColorMode}
+                            bg="unset"
+                            aria-label="Toggle color mode"
+                        >
                             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                         </Button>
                     </Stack>
@@ -80,7 +82,7 @@ export const NavBar = () => {
 
             {isOpen ? (
                 <Box pb={4} display={{ md: "none" }}>
-                    <Stack as={"nav"} spacing={4}>
+                    <Stack as="nav" spacing={4}>
                         {Links.map((link) => (
                             <NavLink key={link}>{link}</NavLink>
                         ))}
