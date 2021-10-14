@@ -39,20 +39,20 @@ const SocialButton = ({
 
 export const Footer = () => (
   <Box
-    position="fixed"
-    bottom="0"
     w="full"
     align="center"
+    mt="auto"
   >
     <Divider />
     <Flex
       maxW="6xl"
       p={4}
+      pb={{ base: 2, md: 4 }}
       direction={{ base: "column", md: "row" }}
       align="center"
       gridGap={1}
     >
-      <Text>© 2021 Carles Moreno. All rights reserved</Text>
+      <Text>© 2021 Carles Moreno</Text>
       <Spacer />
       <HStack spacing={4}>
         <SocialButton label="Twitter" href="#" icon={<FaTwitter />} />

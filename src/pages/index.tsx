@@ -9,15 +9,15 @@ import {
 import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Main } from "../components/Main";
-import { NavBar } from "../components/NavBar";
 import { NextPage } from "next";
 import React from "react";
 
 const Index: NextPage = () => (
   <Container height="100vh">
-    <NavBar />
+    <Header />
     <Hero />
     <Main>
       <Text>
