@@ -1,10 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react'
-
-import theme from '../theme'
-import type { AppProps, NextWebVitalsMetric } from 'next/app'
-import React, { useEffect } from 'react'
-import Head from 'next/head'
-import * as serviceWorker from "../../lib/serviceWorker"
+import * as serviceWorker from "../../lib/serviceWorker";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
+import React, { useEffect } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import Head from "next/head";
+import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -21,11 +20,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
-  )
+  );
 }
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log(metric)
+  console.log(metric);
 }
 
-export default MyApp
+export default MyApp;
