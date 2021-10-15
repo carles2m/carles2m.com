@@ -9,8 +9,8 @@ import {
   Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import React from "react";
+import { socialLinks } from "../lib/constants";
 
 const SocialButton = ({
   label,
@@ -58,9 +58,9 @@ export const Footer = () => (
         <Text>© 2021 Carles Moreno</Text>
         <Spacer />
         <HStack spacing={4}>
-          <SocialButton label="Twitter" href="#" icon={<FaTwitter />} />
-          <SocialButton label="YouTube" href="#" icon={<FaYoutube />} />
-          <SocialButton label="Instagram" href="#" icon={<FaInstagram />} />
+          {Object.values(socialLinks).map(({ name, href, icon: Icon }) => (
+            <SocialButton key={name} label={name} href={href} icon={<Icon />} />
+          ))}
         </HStack>
       </Flex>
     </Box>

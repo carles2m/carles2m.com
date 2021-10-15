@@ -21,19 +21,24 @@ import React from "react";
 const Links = ["Dashboard", "Projects", "Team"];
 
 const NavLink = ({ children }: { children: React.ReactNode }) => (
-    <Link
-        px={2}
-        py={1}
-        rounded="md"
-        _hover={{
-            textDecoration: "none",
-            bg: useColorModeValue("gray.200", "gray.700"),
-        }}
-        href="#"
-        transition="background 0.3s ease"
+    <Box
+        as="li"
+        listStyleType="none"
     >
-        {children}
-    </Link>
+        <Link
+            px={2}
+            py={1}
+            rounded="md"
+            _hover={{
+                textDecoration: "none",
+                bg: useColorModeValue("gray.200", "gray.700"),
+            }}
+            href="#"
+            transition="background 0.3s ease"
+        >
+            {children}
+        </Link>
+    </Box>
 );
 
 export const Header = () => {
@@ -70,7 +75,7 @@ export const Header = () => {
                         <HStack spacing={8} alignItems="center">
                             <Popover trigger="hover" isLazy>
                                 <PopoverTrigger>
-                                    <Avatar src="profile.webp" alt="Carles Moreno" />
+                                    <Avatar src="profile.webp" name="Carles Moreno" />
                                 </PopoverTrigger>
                                 <Portal>
                                     <PopoverContent>
@@ -78,14 +83,19 @@ export const Header = () => {
                                     </PopoverContent>
                                 </Portal>
                             </Popover>
-                            <HStack
+                            <Box
                                 as="nav"
-                                spacing={4}
-                                display={{ base: "none", md: "flex" }}>
-                                {Links.map((link) => (
-                                    <NavLink key={link}>{link}</NavLink>
-                                ))}
-                            </HStack>
+                                display={{ base: "none", md: "flex" }}
+                            >
+                                <HStack
+                                    as="ul"
+                                    spacing={4}
+                                >
+                                    {Links.map((link) => (
+                                        <NavLink key={link}>{link}</NavLink>
+                                    ))}
+                                </HStack>
+                            </Box>
                         </HStack>
 
                         <Flex alignItems="center">
@@ -103,8 +113,16 @@ export const Header = () => {
                     </Flex>
 
                     {isOpen ? (
-                        <Box pb={4} display={{ md: "none" }}>
-                            <Stack as="nav" spacing={4}>
+                        <Box
+                            as="nav"
+                            pb={4}
+                            display={{ md: "none" }}
+                        >
+                            <Stack
+                                as="ul"
+                                pt={4}
+                                spacing={4}
+                            >
                                 {Links.map((link) => (
                                     <NavLink key={link}>{link}</NavLink>
                                 ))}

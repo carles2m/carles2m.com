@@ -6,8 +6,7 @@ import {
 } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
+  useSystemColorMode: true,
 };
 
 const theme = extendTheme(
@@ -20,7 +19,7 @@ const theme = extendTheme(
       Link: {
         variants: {
           "branded": (props) => ({
-            color: props.colorMode === "dark" ? "brand.300" : "brand.700"
+            color: props.colorMode === "dark" ? "brand.400" : "brand.600"
           })
         }
       }
