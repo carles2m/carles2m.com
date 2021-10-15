@@ -1,53 +1,34 @@
 import {
-  Link as ChakraLink,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
+  Heading,
+  Link,
   Text,
 } from "@chakra-ui/react";
-import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { Hero } from "../components/Hero";
 import { Main } from "../components/Main";
 import { NextPage } from "next";
 import React from "react";
 
-const Index: NextPage = () => (
-  <Container height="100vh">
-    <Header />
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
-        <Code>typescript</Code>.
-      </Text>
+const Index: NextPage = () => {
+  const day = new Date().toLocaleString("en-us", { weekday: "long" });
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
+  return (
+    <Container height="100vh">
+      <Header />
+      <Main>
+        <Heading>
+          Happy {day}! I&apos;m Carles Moreno
+        </Heading>
 
-    <Footer/>
-  </Container>
-);
+        <Text>
+          I&apos;m a Software Engineer Manager at <Link isExternal href="https://www.microsoft.com">Microsoft</Link>.
+        </Text>
+      </Main>
+
+      <Footer />
+    </Container>
+  );
+};
 
 export default Index;

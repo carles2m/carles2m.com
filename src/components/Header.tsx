@@ -9,6 +9,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
+    Portal,
     Stack,
     useColorMode,
     useColorModeValue,
@@ -71,9 +72,11 @@ export const Header = () => {
                                 <PopoverTrigger>
                                     <Avatar src="profile.webp" alt="Carles Moreno" />
                                 </PopoverTrigger>
-                                <PopoverContent>
-                                    <Image src="profile.webp" alt="Carles Moreno" />
-                                </PopoverContent>
+                                <Portal>
+                                    <PopoverContent>
+                                        <Image src="profile.webp" alt="Carles Moreno" />
+                                    </PopoverContent>
+                                </Portal>
                             </Popover>
                             <HStack
                                 as="nav"

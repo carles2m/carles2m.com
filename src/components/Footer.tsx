@@ -39,26 +39,30 @@ const SocialButton = ({
 
 export const Footer = () => (
   <Box
+    as="footer"
     w="full"
-    align="center"
     mt="auto"
   >
-    <Divider />
-    <Flex
-      maxW="6xl"
-      p={4}
-      pb={{ base: 2, md: 4 }}
-      direction={{ base: "column", md: "row" }}
+    <Box
       align="center"
-      gridGap={1}
     >
-      <Text>© 2021 Carles Moreno</Text>
-      <Spacer />
-      <HStack spacing={4}>
-        <SocialButton label="Twitter" href="#" icon={<FaTwitter />} />
-        <SocialButton label="YouTube" href="#" icon={<FaYoutube />} />
-        <SocialButton label="Instagram" href="#" icon={<FaInstagram />} />
-      </HStack>
-    </Flex>
+      <Divider />
+      <Flex
+        maxW="6xl"
+        p={4}
+        pb={{ base: 2, md: 4 }}
+        direction={{ base: "column", md: "row" }}
+        align="center"
+        gridGap={1}
+      >
+        <Text>© 2021 Carles Moreno</Text>
+        <Spacer />
+        <HStack spacing={4}>
+          <SocialButton label="Twitter" href="#" icon={<FaTwitter />} />
+          <SocialButton label="YouTube" href="#" icon={<FaYoutube />} />
+          <SocialButton label="Instagram" href="#" icon={<FaInstagram />} />
+        </HStack>
+      </Flex>
+    </Box>
   </Box>
 );
