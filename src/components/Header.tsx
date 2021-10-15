@@ -17,10 +17,13 @@ import {
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import React from "react";
+import { headerLinks } from "../lib/constants";
 
-const Links = ["Dashboard", "Projects", "Team"];
-
-const NavLink = ({ children }: { children: React.ReactNode }) => (
+const NavLink = ({
+    children
+}: {
+    children: React.ReactNode
+}) => (
     <Box
         as="li"
         listStyleType="none"
@@ -51,8 +54,9 @@ export const Header = () => {
             top={0}
             position="sticky"
             zIndex="docked"
-            bg={useColorModeValue("gray.100", "gray.800")}
+            backdropFilter="saturate(180%) blur(20px) contrast(90%)"
             w="full"
+            boxShadow="2xl"
         >
             <Box
                 align="center"
@@ -63,15 +67,18 @@ export const Header = () => {
                     maxW="6xl"
                 >
                     <Flex h={16} alignItems="center" justifyContent="space-between">
-                        <Button
-                            onClick={isOpen ? onClose : onOpen}
-                            bg="unset"
-                            aria-label="Open Menu"
-                            display={{ md: "none" }}
-                            transition="background 0.3s ease"
-                        >
-                            {isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                        </Button>
+                        <Box display={{ md: "none" }} minW="48px">
+                            {!!headerLinks.length && <Button
+                                onClick={isOpen ? onClose : onOpen}
+                                bg="unset"
+                                aria-label="Open Menu"
+                                display={{ md: "none" }}
+                                transition="background 0.3s ease"
+                            >
+                                {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                            </Button>}
+                        </Box>
+
                         <HStack spacing={8} alignItems="center">
                             <Popover trigger="hover" isLazy>
                                 <PopoverTrigger>
@@ -91,7 +98,7 @@ export const Header = () => {
                                     as="ul"
                                     spacing={4}
                                 >
-                                    {Links.map((link) => (
+                                    {headerLinks.map((link) => (
                                         <NavLink key={link}>{link}</NavLink>
                                     ))}
                                 </HStack>
@@ -123,7 +130,7 @@ export const Header = () => {
                                 pt={4}
                                 spacing={4}
                             >
-                                {Links.map((link) => (
+                                {headerLinks.map((link) => (
                                     <NavLink key={link}>{link}</NavLink>
                                 ))}
                             </Stack>
