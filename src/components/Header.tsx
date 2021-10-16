@@ -1,5 +1,4 @@
 import {
-    Avatar,
     Box,
     Button,
     Flex,
@@ -82,11 +81,22 @@ export const Header = () => {
                         <HStack spacing={8} alignItems="center">
                             <Popover trigger="hover" isLazy>
                                 <PopoverTrigger>
-                                    <Avatar src="profile.webp" name="Carles Moreno" />
+                                    <Image
+                                        borderRadius="full"
+                                        src="profile.webp"
+                                        alt="Carles Moreno"
+                                        htmlHeight="48px"
+                                        htmlWidth="48px"
+                                    />
                                 </PopoverTrigger>
                                 <Portal>
                                     <PopoverContent>
-                                        <Image src="profile.webp" alt="Carles Moreno" />
+                                        <Image
+                                            src="profile.webp"
+                                            alt="Carles Moreno"
+                                            htmlHeight="512px"
+                                            htmlWidth="512px"
+                                        />
                                     </PopoverContent>
                                 </Portal>
                             </Popover>

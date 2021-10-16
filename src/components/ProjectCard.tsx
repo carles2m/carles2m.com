@@ -60,7 +60,9 @@ export const ProjectCard = ({
                 <Image
                     rounded="lg"
                     height={240}
+                    htmlHeight={240}
                     width={300}
+                    htmlWidth={300}
                     objectFit="cover"
                     src={image}
                     alt=""
