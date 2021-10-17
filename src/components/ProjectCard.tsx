@@ -70,7 +70,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                     <Text
                         textAlign="center"
                         color={useColorModeValue("gray.700", "gray.400")}
-                        px={3}>
+                        px={3}
+                    >
                         {project.content}
                     </Text>
 

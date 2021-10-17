@@ -1,9 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IconType } from "react-icons/lib";
-import React from "react";
 import {
+    Link,
     Text,
 } from "@chakra-ui/react";
+import { IconType } from "react-icons/lib";
+import React from "react";
 
 export const headerLinks = [
 ] as const;
@@ -51,7 +52,14 @@ export const projects: { [key: string]: Project } = {
         content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
         tags: ["Windows Phone", "NodeJS", "MongoDB"]
     },
-    office2010: {
+    excelOnline: {
+        year: 2013,
+        name: "Microsoft Excel Online",
+        image: "excel.webp",
+        content: <Text as="span">Implemented <Link isExternal href="https://support.microsoft.com/office/outline-group-data-in-a-worksheet-08ce98c4-0063-4d42-8ac7-8278c49e9aff">outlines</Link> and the <Link isExternal href="https://support.microsoft.com/office/undo-redo-or-repeat-an-action-84bdb9bc-4e23-4f06-ba78-f7b893eb2d28">undo/redo</Link> functionality to <Text as="span" display="inline-block">Microsoft Excel for the web</Text></Text>,
+        tags: ["ASP.NET", "Script#", "C++"]
+    },
+    office365: {
         year: 2010,
         name: "Microsoft Office 365",
         image: "officelogo-light.webp",
