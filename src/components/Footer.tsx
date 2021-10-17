@@ -9,30 +9,22 @@ import {
   Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { SocialLink, socialLinks } from "../lib/constants";
 import React from "react";
-import { socialLinks } from "../lib/constants";
 
-const SocialButton = ({
-  label,
-  href,
-  icon
-}: {
-  label: string;
-  href: string;
-  icon: React.ReactElement;
-}) => (
-  <Tooltip label={label}>
+const SocialButton = ({ link }: { link: SocialLink }) => (
+  <Tooltip label={link.name}>
     <IconButton
       rounded="full"
       as="a"
-      href={href}
-      aria-label={label}
+      href={link.href}
+      aria-label={link.name}
       transition="background 0.3s ease"
       bg="unset"
       _hover={{
         bg: useColorModeValue("gray.200", "gray.700"),
       }}
-      icon={icon}
+      icon={<link.icon />}
     />
   </Tooltip>
 );
@@ -58,8 +50,8 @@ export const Footer = () => (
         <Text>© 2021 Carles Moreno</Text>
         <Spacer />
         <HStack spacing={4}>
-          {Object.values(socialLinks).map(({ name, href, icon: Icon }) => (
-            <SocialButton key={name} label={name} href={href} icon={<Icon />} />
+          {Object.values(socialLinks).map((link) => (
+            <SocialButton key={link.name} link={link} />
           ))}
         </HStack>
       </Flex>

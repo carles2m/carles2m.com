@@ -9,23 +9,11 @@ import {
     VStack,
     useColorModeValue,
 } from "@chakra-ui/react";
+import { Project } from "../lib/constants";
 import React from "react";
 
-
-export const ProjectCard = ({
-    name,
-    image,
-    imageDark,
-    content,
-    tags
-}: {
-    name: string
-    image: string
-    imageDark?: string
-    content: string | React.ReactElement,
-    tags: readonly string[]
-}) => {
-    const imageSrc = useColorModeValue(image, imageDark ?? image);
+export const ProjectCard = ({ project }: { project: Project }) => {
+    const imageSrc = useColorModeValue(project.image, project.imageDark ?? project.image);
 
     return (
         <Center py="2vh" px="1vw" >
@@ -76,18 +64,18 @@ export const ProjectCard = ({
 
                 <VStack pt={12} spacing={4}>
                     <Heading fontSize="2xl" fontFamily="body">
-                        {name}
+                        {project.name}
                     </Heading>
 
                     <Text
                         textAlign="center"
                         color={useColorModeValue("gray.700", "gray.400")}
                         px={3}>
-                        {content}
+                        {project.content}
                     </Text>
 
                     <Stack align="center" justify="center" direction="row" mt={6}>
-                        {tags.map(tag => (
+                        {project.tags.map(tag => (
                             <Badge
                                 key={tag}
                                 px={2}

@@ -45,14 +45,10 @@ const Index: NextPage = () => {
             wrap="wrap"
             justifyContent="space-evenly"
           >
-            {Object.values(projects).map(project => (
+            {Object.values(projects).sort(project => project.year).map(project => (
               <ProjectCard
                 key={project.name}
-                name={project.name}
-                image={project.image}
-                imageDark={project.imageDark}
-                content={project.content}
-                tags={project.tags}
+                project={project}
               />
             ))}
           </Flex>
