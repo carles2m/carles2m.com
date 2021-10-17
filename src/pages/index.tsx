@@ -50,6 +50,7 @@ const Index: NextPage = () => {
                 key={project.name}
                 name={project.name}
                 image={project.image}
+                imageDark={project.imageDark}
                 content={project.content}
                 tags={project.tags}
               />
