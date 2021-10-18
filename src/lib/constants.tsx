@@ -52,6 +52,13 @@ export const projects: { [key: string]: Project } = {
         content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
         tags: ["Windows Phone", "NodeJS", "MongoDB"]
     },
+    amc: {
+        year: 2015,
+        name: "Microsoft Account",
+        image: "microsoftaccount.webp",
+        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services">website</Link> for the management of all Microsoft subscriptions</Text>,
+        tags: ["ASP.NET", "AngularJs", "MWF"]
+    },
     excelOnline: {
         year: 2013,
         name: "Microsoft Excel Online",

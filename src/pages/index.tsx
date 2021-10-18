@@ -45,7 +45,7 @@ const Index: NextPage = () => {
             wrap="wrap"
             justifyContent="space-evenly"
           >
-            {Object.values(projects).sort(project => project.year).map(project => (
+            {Object.values(projects).sort((p1, p2) => p2.year - p1.year).map(project => (
               <ProjectCard
                 key={project.name}
                 project={project}
