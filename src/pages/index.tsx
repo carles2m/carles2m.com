@@ -1,3 +1,4 @@
+import * as serviceWorker from "../lib/serviceWorker";
 import {
   Flex,
   Heading,
@@ -5,6 +6,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import { personalProjects, professionalProjects } from "../lib/constants";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
@@ -12,10 +14,16 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { NextPage } from "next";
 import { ProjectCard } from "../components/ProjectCard";
-import React from "react";
 import theme from "../lib/theme";
 
 const Index: NextPage = () => {
+  useEffect(() => {
+    // If you want your app to work offline and load faster, you can change
+    // unregister() to register() below. Note this comes with some pitfalls.
+    // Learn more about service workers: https://cra.link/PWA
+    serviceWorker.unregister();
+  }, []);
+
   const day = new Date().toLocaleString("en-us", { weekday: "long" });
 
   return (
