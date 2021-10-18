@@ -5,6 +5,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { personalProjects, professionalProjects } from "../lib/constants";
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -12,7 +13,6 @@ import { Main } from "../components/Main";
 import { NextPage } from "next";
 import { ProjectCard } from "../components/ProjectCard";
 import React from "react";
-import { projects } from "../lib/constants";
 import theme from "../lib/theme";
 
 const Index: NextPage = () => {
@@ -22,7 +22,7 @@ const Index: NextPage = () => {
     <Container>
       <Header />
       <Main>
-        <Heading pt="6vh">
+        <Heading as="h1" size="2xl" pt="4vh">
           Happy {day}!{" "}
           <Text
             as="span"
@@ -39,13 +39,29 @@ const Index: NextPage = () => {
         </Text>
 
         <Stack spacing="0.5rem">
-          <Heading>Projects</Heading>
+          <Heading as="h2">Professional Projects</Heading>
 
           <Flex
             wrap="wrap"
             justifyContent="space-evenly"
           >
-            {Object.values(projects).sort((p1, p2) => p2.year - p1.year).map(project => (
+            {Object.values(professionalProjects).sort((p1, p2) => p2.year - p1.year).map(project => (
+              <ProjectCard
+                key={project.name}
+                project={project}
+              />
+            ))}
+          </Flex>
+        </Stack>
+
+        <Stack spacing="0.5rem">
+          <Heading as="h2">Personal Projects</Heading>
+
+          <Flex
+            wrap="wrap"
+            justifyContent="space-evenly"
+          >
+            {Object.values(personalProjects).sort((p1, p2) => p2.year - p1.year).map(project => (
               <ProjectCard
                 key={project.name}
                 project={project}
