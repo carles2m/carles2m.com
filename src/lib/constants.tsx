@@ -52,6 +52,13 @@ export const projects: { [key: string]: Project } = {
         content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
         tags: ["Windows Phone", "NodeJS", "MongoDB"]
     },
+    consentxbox: {
+        year: 2018,
+        name: "Xbox Parental Consent",
+        image: "xbox.webp",
+        content: "Changed the way parents provide adult verification by using an electronic signature",
+        tags: ["ASP.NET", "AngularJs", "MWF"]
+    },
     amc: {
         year: 2015,
         name: "Microsoft Account",
