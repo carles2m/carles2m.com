@@ -4,7 +4,6 @@ import {
     Button,
     Flex,
     HStack,
-    Image,
     Link,
     Popover,
     PopoverContent,
@@ -18,6 +17,7 @@ import {
 import React from "react";
 
 import { headerLinks } from "../lib/constants";
+import { ChakraNextImage } from "./ChakraNextImage";
 
 const NavLink = ({
     children
@@ -82,21 +82,23 @@ export const Header = () => {
                         <HStack spacing={8} alignItems="center">
                             <Popover trigger="hover" isLazy>
                                 <PopoverTrigger>
-                                    <Image
-                                        borderRadius="full"
-                                        src="profile.webp"
-                                        alt="Carles Moreno"
-                                        htmlHeight="48px"
-                                        htmlWidth="48px"
-                                    />
+                                    <Box>
+                                        <ChakraNextImage
+                                            borderRadius="full"
+                                            src="/profile.webp"
+                                            alt="Carles Moreno"
+                                            height={48}
+                                            width={48}
+                                        />
+                                    </Box>
                                 </PopoverTrigger>
                                 <Portal>
                                     <PopoverContent>
-                                        <Image
-                                            src="profile.webp"
+                                        <ChakraNextImage
+                                            src="/profile.webp"
                                             alt="Carles Moreno"
-                                            htmlHeight="512px"
-                                            htmlWidth="512px"
+                                            height={512}
+                                            width={512}
                                         />
                                     </PopoverContent>
                                 </Portal>

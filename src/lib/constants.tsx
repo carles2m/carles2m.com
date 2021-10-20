@@ -6,6 +6,15 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 
+import advanced21 from "../../public/21.webp";
+import bus from "../../public/bus.webp";
+import excel from "../../public/excel.webp";
+import family from "../../public/family.webp";
+import microsoftaccount from "../../public/microsoftaccount.webp";
+import officelogoDark from "../../public/officelogo-dark.webp";
+import officelogoLight from "../../public/officelogo-light.webp";
+import xbox from "../../public/xbox.webp";
+
 export const headerLinks = [
 ] as const;
 
@@ -31,8 +40,8 @@ export const socialLinks: { [key: string]: SocialLink } = {
 export interface Project {
     year: number
     name: string
-    image: string
-    imageDark?: string
+    image: StaticImageData
+    imageDark?: StaticImageData
     content: string | React.ReactElement,
     tags: readonly string[]
 }
@@ -41,36 +50,36 @@ export const professionalProjects: { [key: string]: Project } = {
     family: {
         year: 2021,
         name: "Microsoft Family Safety",
-        image: "family.webp",
+        image: family,
         content: <Text as="span">I plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><Link isExternal href="https://family.microsoft.com">Family Safety website</Link></Text></Text>,
         tags: ["ASP.NET MVC5", "ReactJs", "FluentUI"]
     },
     consentxbox: {
         year: 2018,
         name: "Xbox Parental Consent",
-        image: "xbox.webp",
+        image: xbox,
         content: "Changed the way parents provide adult verification by using an electronic signature",
         tags: ["ASP.NET MVC 5", "AngularJs", "MWF"]
     },
     amc: {
         year: 2015,
         name: "Microsoft Account",
-        image: "microsoftaccount.webp",
-        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services">website</Link> for the management of all Microsoft subscriptions</Text>,
+        image: microsoftaccount,
+        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services">website</Link> for users to manage all Microsoft subscriptions</Text>,
         tags: ["ASP.NET MVC 5", "AngularJs", "MWF"]
     },
     excelOnline: {
         year: 2013,
         name: "Microsoft Excel Online",
-        image: "excel.webp",
+        image: excel,
         content: <Text as="span">Implemented <Link isExternal href="https://support.microsoft.com/office/outline-group-data-in-a-worksheet-08ce98c4-0063-4d42-8ac7-8278c49e9aff">outlines</Link> and the <Link isExternal href="https://support.microsoft.com/office/undo-redo-or-repeat-an-action-84bdb9bc-4e23-4f06-ba78-f7b893eb2d28">undo/redo</Link> functionality to <Text as="span" display="inline-block">Microsoft Excel for the web</Text></Text>,
         tags: ["ASP.NET", "Script#", "C++"]
     },
     office365: {
         year: 2010,
         name: "Microsoft Office 365",
-        image: "officelogo-light.webp",
-        imageDark: "officelogo-dark.webp",
+        image: officelogoLight,
+        imageDark: officelogoDark,
         content: <Text as="span">Built the first websites to <Text as="em">purchase</Text> and <Text as="em">manage</Text> consumer <Text as="span" display="inline-block">Microsoft Office 365 subscriptions</Text></Text>,
         tags: ["ASP.NET", "jQuery"]
     },
@@ -82,14 +91,14 @@ export const personalProjects: { [key: string]: Project } = {
     advanced21: {
         year: 2020,
         name: "Advanced 21 Blackjack",
-        image: "21.webp",
+        image: advanced21,
         content: "The most realistic way to play Blackjack without having to set foot in a casino",
         tags: ["Android", "iOS", "Unity3d"]
     },
     barcelonaBus: {
         year: 2014,
         name: "Barcelona Bus",
-        image: "bus.webp",
+        image: bus,
         content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
         tags: ["Windows Phone", "NodeJS", "MongoDB"]
     },
