@@ -3,6 +3,7 @@ import {
   cookieStorageManager,
   localStorageManager,
 } from "@chakra-ui/react";
+
 import theme from "./theme";
 
 export function Chakra({ cookies, children }) {

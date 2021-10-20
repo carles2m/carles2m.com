@@ -1,10 +1,10 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
     Link,
     Text,
 } from "@chakra-ui/react";
-import { IconType } from "react-icons/lib";
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 
 export const headerLinks = [
 ] as const;

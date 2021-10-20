@@ -1,7 +1,7 @@
 import {
-  ThemeConfig,
-  theme as base,
   extendTheme,
+  theme as base,
+  ThemeConfig,
   withDefaultVariant
 } from "@chakra-ui/react";
 

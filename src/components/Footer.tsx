@@ -9,8 +9,9 @@ import {
   Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { SocialLink, socialLinks } from "../lib/constants";
 import React from "react";
+
+import { SocialLink, socialLinks } from "../lib/constants";
 
 const SocialButton = ({ link }: { link: SocialLink }) => (
   <Tooltip label={link.name}>

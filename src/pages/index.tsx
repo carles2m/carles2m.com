@@ -1,4 +1,3 @@
-import * as serviceWorker from "../lib/serviceWorker";
 import {
   Flex,
   Heading,
@@ -6,14 +5,16 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { NextPage } from "next";
 import React, { useEffect } from "react";
-import { personalProjects, professionalProjects } from "../lib/constants";
+
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
-import { NextPage } from "next";
 import { ProjectCard } from "../components/ProjectCard";
+import { personalProjects, professionalProjects } from "../lib/constants";
+import * as serviceWorker from "../lib/serviceWorker";
 import theme from "../lib/theme";
 
 const Index: NextPage = () => {
@@ -47,7 +48,7 @@ const Index: NextPage = () => {
         </Text>
 
         <Stack spacing="0.5rem">
-          <Heading as="h2">Professional Projects</Heading>
+          <Heading as="h2">Experience</Heading>
 
           <Flex
             wrap="wrap"

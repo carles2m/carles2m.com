@@ -6,11 +6,12 @@ import {
     Image,
     Stack,
     Text,
-    VStack,
     useColorModeValue,
+    VStack,
 } from "@chakra-ui/react";
-import { Project } from "../lib/constants";
 import React from "react";
+
+import { Project } from "../lib/constants";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
     const imageSrc = useColorModeValue(project.image, project.imageDark ?? project.image);

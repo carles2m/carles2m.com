@@ -1,7 +1,8 @@
 import type { AppProps, NextWebVitalsMetric } from "next/app";
-import { Chakra } from "../lib/Chakra";
 import Head from "next/head";
 import React from "react";
+
+import { Chakra } from "../lib/Chakra";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Chakra cookies={pageProps.cookies}>

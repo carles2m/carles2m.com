@@ -1,3 +1,4 @@
+import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
     Box,
     Button,
@@ -14,8 +15,8 @@ import {
     useColorModeValue,
     useDisclosure
 } from "@chakra-ui/react";
-import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import React from "react";
+
 import { headerLinks } from "../lib/constants";
 
 const NavLink = ({
