@@ -4,7 +4,7 @@ import React from "react";
 
 import { Chakra } from "../lib/Chakra";
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
   <Chakra cookies={pageProps.cookies}>
     <Head>
       <title>Carles Moreno</title>

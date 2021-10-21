@@ -13,7 +13,7 @@ import React from "react";
 
 import { SocialLink, socialLinks } from "../lib/constants";
 
-const SocialButton = ({ link }: { link: SocialLink }) => (
+const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
   <Tooltip label={link.name}>
     <IconButton
       rounded="full"
@@ -30,7 +30,7 @@ const SocialButton = ({ link }: { link: SocialLink }) => (
   </Tooltip>
 );
 
-export const Footer = () => (
+export const Footer: React.FC = () => (
   <Box
     as="footer"
     w="full"

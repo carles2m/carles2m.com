@@ -1,6 +1,6 @@
 import { Flex, FlexProps, useColorModeValue } from "@chakra-ui/react";
 
-export const Container = (props: FlexProps) => (
+export const Container: React.FC<FlexProps> = (props) => (
   <Flex
     direction="column"
     alignItems="center"

@@ -6,7 +6,10 @@ import {
 
 import theme from "./theme";
 
-export function Chakra({ cookies, children }) {
+export const Chakra: React.FC<{ cookies: unknown }> = ({
+  cookies,
+  children
+}) => {
   const colorModeManager = typeof cookies === "string"
     ? cookieStorageManager(cookies)
     : localStorageManager;
@@ -16,7 +19,7 @@ export function Chakra({ cookies, children }) {
       {children}
     </ChakraProvider>
   );
-}
+};
 
 export function getServerSideProps({ req }) {
   return {

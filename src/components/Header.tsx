@@ -19,11 +19,7 @@ import React from "react";
 import { headerLinks } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
 
-const NavLink = ({
-    children
-}: {
-    children: React.ReactNode
-}) => (
+const NavLink: React.FC = ({ children }) => (
     <Box
         as="li"
         listStyleType="none"
@@ -44,7 +40,7 @@ const NavLink = ({
     </Box>
 );
 
-export const Header = () => {
+export const Header: React.FC = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
 

@@ -65,7 +65,7 @@ export const professionalProjects: { [key: string]: Project } = {
         year: 2015,
         name: "Microsoft Account",
         image: microsoftaccount,
-        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services">website</Link> for users to manage all Microsoft subscriptions</Text>,
+        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services" aria-label="Microsoft Account">website</Link> for users to manage all Microsoft subscriptions</Text>,
         tags: ["ASP.NET MVC 5", "AngularJs", "MWF"]
     },
     excelOnline: {
