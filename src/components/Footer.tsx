@@ -35,6 +35,7 @@ export const Footer: React.FC = () => (
     as="footer"
     w="full"
     mt="auto"
+    pt={6}
   >
     <Box
       align="center"

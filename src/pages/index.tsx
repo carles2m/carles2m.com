@@ -6,7 +6,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
@@ -43,7 +43,13 @@ const Section: React.FC<{
     </Stack>
   );
 
+const getDay = (): string => {
+  return new Date().toLocaleString("en-us", { weekday: "long" });
+};
+
 const Index: NextPage = () => {
+  const [day, setDay] = useState(getDay());
+
   useEffect(() => {
     // If you want your app to work offline and load faster, you can change
     // unregister() to register() below. Note this comes with some pitfalls.
@@ -51,7 +57,13 @@ const Index: NextPage = () => {
     serviceWorker.unregister();
   }, []);
 
-  const day = new Date().toLocaleString("en-us", { weekday: "long" });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDay(getDay());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Container>
