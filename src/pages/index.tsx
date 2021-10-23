@@ -14,6 +14,7 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { ProjectCard } from "../components/ProjectCard";
 import { personalProjects, professionalProjects, Project } from "../lib/constants";
+import { getWeekDay } from "../lib/dateUtil";
 import * as serviceWorker from "../lib/serviceWorker";
 import theme from "../lib/theme";
 
@@ -43,12 +44,8 @@ const Section: React.FC<{
     </Stack>
   );
 
-const getDay = (): string => {
-  return new Date().toLocaleString("en-us", { weekday: "long" });
-};
-
 const Index: NextPage = () => {
-  const [day, setDay] = useState(getDay());
+  const [day, setDay] = useState(getWeekDay());
 
   useEffect(() => {
     // If you want your app to work offline and load faster, you can change
@@ -59,7 +56,7 @@ const Index: NextPage = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDay(getDay());
+      setDay(getWeekDay());
     }, 60000);
 
     return () => clearInterval(interval);
@@ -70,7 +67,7 @@ const Index: NextPage = () => {
       <Header />
       <Main>
         <Heading as="h1" size="2xl" pt="4vh">
-          Happy {day}!{" "}
+          {`Happy ${day}! `}
           <Text
             as="span"
             bgGradient={`linear(to-r, ${theme.colors.red[500]}, ${theme.colors.purple[500]})`}

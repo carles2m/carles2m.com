@@ -40,7 +40,7 @@ export const socialLinks: { [key: string]: SocialLink } = {
 export interface Project {
     year: number
     name: string
-    image: StaticImageData
+    image: StaticImageData | string
     imageDark?: StaticImageData
     content: string | React.ReactElement,
     tags: readonly string[]
@@ -52,7 +52,7 @@ export const professionalProjects: { [key: string]: Project } = {
         name: "Microsoft Family Safety",
         image: family,
         content: <Text as="span">I plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><Link isExternal href="https://family.microsoft.com">Family Safety website</Link></Text></Text>,
-        tags: ["ASP.NET MVC5", "ReactJs", "FluentUI"]
+        tags: ["ASP.NET MVC 5", "React", "Fluent UI"]
     },
     consentxbox: {
         year: 2018,
@@ -88,18 +88,25 @@ export const professionalProjects: { [key: string]: Project } = {
 
 
 export const personalProjects: { [key: string]: Project } = {
+    carles2m: {
+        year: 2021,
+        name: "carles2m.com",
+        image: "👋",
+        content: "This website you are watching. Responsive, fully accessible and working offline. Try it!",
+        tags: ["NextJs", "Chakra UI"]
+    },
     advanced21: {
         year: 2020,
         name: "Advanced 21 Blackjack",
         image: advanced21,
         content: "The most realistic way to play Blackjack without having to set foot in a casino",
-        tags: ["Android", "iOS", "Unity3d"]
+        tags: ["Android", "iOS", "Unity 3d"]
     },
     barcelonaBus: {
         year: 2014,
         name: "Barcelona Bus",
         image: bus,
         content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
-        tags: ["Windows Phone", "NodeJS", "MongoDB"]
+        tags: ["Windows Phone", "Node.js", "MongoDB"]
     },
 } as const;

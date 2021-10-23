@@ -9,9 +9,10 @@ import {
   Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { SocialLink, socialLinks } from "../lib/constants";
+import { getYear } from "../lib/dateUtil";
 
 const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
   <Tooltip label={link.name}>
@@ -30,33 +31,45 @@ const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
   </Tooltip>
 );
 
-export const Footer: React.FC = () => (
-  <Box
-    as="footer"
-    w="full"
-    mt="auto"
-    pt={6}
-  >
+export const Footer: React.FC = () => {
+  const [year, setYear] = useState(getYear());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYear(getYear());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
     <Box
-      align="center"
+      as="footer"
+      w="full"
+      mt="auto"
+      pt={6}
     >
-      <Divider />
-      <Flex
-        maxW="6xl"
-        p={4}
-        pb={{ base: 2, md: 4 }}
-        direction={{ base: "column", md: "row" }}
+      <Box
         align="center"
-        gridGap={1}
       >
-        <Text>© 2021 Carles Moreno</Text>
-        <Spacer />
-        <HStack spacing={4}>
-          {Object.values(socialLinks).map((link) => (
-            <SocialButton key={link.name} link={link} />
-          ))}
-        </HStack>
-      </Flex>
+        <Divider />
+        <Flex
+          maxW="6xl"
+          p={4}
+          pb={{ base: 2, md: 4 }}
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          gridGap={1}
+        >
+          <Text>{`© ${year} Carles Moreno`}</Text>
+          <Spacer />
+          <HStack spacing={4}>
+            {Object.values(socialLinks).map((link) => (
+              <SocialButton key={link.name} link={link} />
+            ))}
+          </HStack>
+        </Flex>
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};

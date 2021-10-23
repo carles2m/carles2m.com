@@ -13,8 +13,33 @@ import React from "react";
 import { Project } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
 
+const height = 320;
+const width = 320;
+
 export const ProjectCard = ({ project }: { project: Project }) => {
     const image = useColorModeValue(project.image, project.imageDark ?? project.image);
+
+    const imageElement = typeof image === "string"
+        ? (
+            <Center
+                height={height}
+                width={width}
+                fontSize="9xl"
+            >
+                {image}
+            </Center>
+        )
+        : (
+            <ChakraNextImage
+                roundedTop="lg"
+                height={height}
+                width={width}
+                objectFit="cover"
+                src={image}
+                alt=""
+                placeholder="blur"
+            />
+        );
 
     return (
         <Center py="2vh" px="1vw">
@@ -26,15 +51,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 shadow="lg"
                 position="relative"
             >
-                <ChakraNextImage
-                    roundedTop="lg"
-                    height={320}
-                    width={320}
-                    objectFit="cover"
-                    src={image}
-                    alt=""
-                    placeholder="blur"
-                />
+                {imageElement}
 
                 <VStack p={6} pt={3} spacing={4}>
                     <Heading fontSize="2xl" fontFamily="body" as="h3">
