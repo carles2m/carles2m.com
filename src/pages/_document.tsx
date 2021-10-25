@@ -1,15 +1,52 @@
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
+const name = "Carles Moreno";
+const description = "Carles Moreno's personal site, where his projects, skills and experience are summarized";
+const website = "https://carles2m.com";
+
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" dir="ltr">
         <Head>
-          <meta name="description" content="Carles Moreno's personal site, where his projects, skills and experience are summarized" />
-          <link rel="shortcut icon" href="favicon.ico" />
+          <meta name="description" content={name} />
+          <link rel="shortcut icon" href="icons/favicon.ico" />
           <link rel="apple-touch-icon" href="logo192.png" />
           <link rel="manifest" href="manifest.json" />
+          <meta name="application-name" content={name} />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+          <meta name="apple-mobile-web-app-title" content={name} />
+          <meta name="description" content={description} />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+          <meta name="msapplication-TileColor" content="#2B5797" />
+          <meta name="msapplication-tap-highlight" content="no" />
+          <meta name="theme-color" content="#000000" />
+
+          <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
+          <link rel="apple-touch-icon" sizes="152x152" href="/icons/touch-icon-ipad.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/touch-icon-iphone-retina.png" />
+          <link rel="apple-touch-icon" sizes="167x167" href="/icons/touch-icon-ipad-retina.png" />
+
+          <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
+          {/* <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#000000" /> */}
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:url" content={website} />
+          <meta name="twitter:title" content={name} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content="https://carles2m.com/icons/android-chrome-192x192.png" />
+          <meta name="twitter:creator" content="@carles2m" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={name} />
+          <meta property="og:description" content={description} />
+          <meta property="og:site_name" content={name} />
+          <meta property="og:url" content={website} />
+          <meta property="og:image" content={`${website}/icons/apple-touch-icon.png`} />
         </Head>
         <body>
           <Main />

@@ -4,7 +4,6 @@ import {
     Button,
     Flex,
     HStack,
-    Link,
     Popover,
     PopoverContent,
     PopoverTrigger,
@@ -16,15 +15,17 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+import profile from "../../public/profile.webp";
 import { headerLinks } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
+import { ChakraNextLink } from "./ChakraNextLink";
 
 const NavLink: React.FC = ({ children }) => (
     <Box
         as="li"
         listStyleType="none"
     >
-        <Link
+        <ChakraNextLink
             px={2}
             py={1}
             rounded="md"
@@ -36,7 +37,7 @@ const NavLink: React.FC = ({ children }) => (
             transition="background 0.3s ease"
         >
             {children}
-        </Link>
+        </ChakraNextLink>
     </Box>
 );
 
@@ -81,17 +82,18 @@ export const Header: React.FC = () => {
                                     <Box>
                                         <ChakraNextImage
                                             borderRadius="full"
-                                            src="/profile.webp"
+                                            src={profile}
                                             alt="Carles Moreno"
                                             height={48}
                                             width={48}
+                                            placeholder="blur"
                                         />
                                     </Box>
                                 </PopoverTrigger>
                                 <Portal>
                                     <PopoverContent>
                                         <ChakraNextImage
-                                            src="/profile.webp"
+                                            src={profile}
                                             alt="Carles Moreno"
                                             height={512}
                                             width={512}

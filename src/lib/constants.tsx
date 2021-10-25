@@ -1,5 +1,4 @@
 import {
-    Link,
     Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -14,6 +13,7 @@ import microsoftaccount from "../../public/microsoftaccount.webp";
 import officelogoDark from "../../public/officelogo-dark.webp";
 import officelogoLight from "../../public/officelogo-light.webp";
 import xbox from "../../public/xbox.webp";
+import { ChakraNextLink } from "../components/ChakraNextLink";
 
 export const headerLinks = [
 ] as const;
@@ -51,7 +51,7 @@ export const professionalProjects: { [key: string]: Project } = {
         year: 2021,
         name: "Microsoft Family Safety",
         image: family,
-        content: <Text as="span">I plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><Link isExternal href="https://family.microsoft.com">Family Safety website</Link></Text></Text>,
+        content: <Text as="span">I plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><ChakraNextLink isExternal href="https://family.microsoft.com">Family Safety website</ChakraNextLink></Text></Text>,
         tags: ["ASP.NET MVC 5", "React", "Fluent UI"]
     },
     consentxbox: {
@@ -65,14 +65,14 @@ export const professionalProjects: { [key: string]: Project } = {
         year: 2015,
         name: "Microsoft Account",
         image: microsoftaccount,
-        content: <Text as="span">Consolidated multiple forms of data in one <Link isExternal href="https://account.microsoft.com/services" aria-label="Microsoft Account">website</Link> for users to manage all Microsoft subscriptions</Text>,
+        content: <Text as="span">Consolidated multiple forms of data in one <ChakraNextLink isExternal href="https://account.microsoft.com/services" aria-label="Microsoft Account">website</ChakraNextLink> for users to manage all Microsoft subscriptions</Text>,
         tags: ["ASP.NET MVC 5", "AngularJs", "MWF"]
     },
     excelOnline: {
         year: 2013,
         name: "Microsoft Excel Online",
         image: excel,
-        content: <Text as="span">Implemented <Link isExternal href="https://support.microsoft.com/office/outline-group-data-in-a-worksheet-08ce98c4-0063-4d42-8ac7-8278c49e9aff">outlines</Link> and the <Link isExternal href="https://support.microsoft.com/office/undo-redo-or-repeat-an-action-84bdb9bc-4e23-4f06-ba78-f7b893eb2d28">undo/redo</Link> functionality to <Text as="span" display="inline-block">Microsoft Excel for the web</Text></Text>,
+        content: <Text as="span">Implemented <ChakraNextLink isExternal href="https://support.microsoft.com/office/outline-group-data-in-a-worksheet-08ce98c4-0063-4d42-8ac7-8278c49e9aff">outlines</ChakraNextLink> and the <ChakraNextLink isExternal href="https://support.microsoft.com/office/undo-redo-or-repeat-an-action-84bdb9bc-4e23-4f06-ba78-f7b893eb2d28">undo/redo</ChakraNextLink> functionality to <Text as="span" display="inline-block">Microsoft Excel for the web</Text></Text>,
         tags: ["ASP.NET", "Script#", "C++"]
     },
     office365: {
@@ -85,15 +85,13 @@ export const professionalProjects: { [key: string]: Project } = {
     },
 } as const;
 
-
-
 export const personalProjects: { [key: string]: Project } = {
     carles2m: {
         year: 2021,
         name: "carles2m.com",
         image: "👋",
-        content: "This website you are watching. Responsive, fully accessible and working offline. Try it!",
-        tags: ["NextJs", "Chakra UI"]
+        content: "This website you are watching. Responsive, fully accessible, that also works offline. Try it!",
+        tags: ["Next.js", "Chakra UI"]
     },
     advanced21: {
         year: 2020,
