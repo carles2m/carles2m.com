@@ -4,7 +4,7 @@ import {
   localStorageManager,
 } from "@chakra-ui/react";
 
-import theme from "./theme";
+import { theme } from "./theme";
 
 export const Chakra: React.FC<{ cookies: unknown }> = ({
   cookies,

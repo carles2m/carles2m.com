@@ -1,6 +1,8 @@
 import {
+  createStandaloneToast,
   Flex,
   Heading,
+  Link as ChakraLink,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -15,7 +17,7 @@ import { Main } from "../components/Main";
 import { ProjectCard } from "../components/ProjectCard";
 import { personalProjects, professionalProjects, Project } from "../lib/constants";
 import { getWeekDay } from "../lib/dateUtil";
-import theme from "../lib/theme";
+import { theme } from "../lib/theme";
 
 const Section: React.FC<{
   id: string
@@ -45,6 +47,7 @@ const Section: React.FC<{
 
 const Index: NextPage = () => {
   const [day, setDay] = useState(getWeekDay());
+  const toast = createStandaloneToast();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,6 +56,19 @@ const Index: NextPage = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
+    navigator.serviceWorker.ready.then(() => {
+      toast({
+        title: <Text as="span"><ChakraLink textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
+        description: "You can go offline now",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+        position: "top"
+      });
+    });
+  }
 
   return (
     <Container>

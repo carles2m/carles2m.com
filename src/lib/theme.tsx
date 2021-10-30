@@ -9,7 +9,7 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-const theme = extendTheme(
+export const theme = extendTheme(
   {
     config,
     colors: {
@@ -30,5 +30,3 @@ const theme = extendTheme(
     components: ["Link"]
   })
 );
-
-export default theme;

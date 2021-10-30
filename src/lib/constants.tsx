@@ -90,7 +90,7 @@ export const personalProjects: { [key: string]: Project } = {
         year: 2021,
         name: "carles2m.com",
         image: "👋",
-        content: "This website you are watching. Responsive, fully accessible, that also works offline. Try it!",
+        content: "This website you are watching. Responsive, fully accessible, and also works offline. Try it!",
         tags: ["Next.js", "Chakra UI"]
     },
     advanced21: {
