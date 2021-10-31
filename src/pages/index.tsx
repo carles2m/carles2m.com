@@ -1,9 +1,7 @@
 import {
   createStandaloneToast,
-  Flex,
   Heading,
   Link as ChakraLink,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
@@ -14,36 +12,10 @@ import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
-import { ProjectCard } from "../components/ProjectCard";
-import { personalProjects, professionalProjects, Project } from "../lib/constants";
+import { ProjectsSection } from "../components/ProjectsSection";
+import { personalProjects, professionalProjects } from "../lib/constants";
 import { getWeekDay } from "../lib/dateUtil";
 import { theme } from "../lib/theme";
-
-const Section: React.FC<{
-  id: string
-  title: string
-  projects: { [key: string]: Project }
-}> = ({
-  id,
-  title,
-  projects
-}) => (
-    <Stack spacing="0.5rem" as="section" aria-labelledby={id}>
-      <Heading as="h2" id={id}>{title}</Heading>
-
-      <Flex
-        wrap="wrap"
-        justifyContent="space-evenly"
-      >
-        {Object.values(projects).sort((p1, p2) => p2.year - p1.year).map(project => (
-          <ProjectCard
-            key={project.name}
-            project={project}
-          />
-        ))}
-      </Flex>
-    </Stack>
-  );
 
 const Index: NextPage = () => {
   const [day, setDay] = useState(getWeekDay());
@@ -90,13 +62,13 @@ const Index: NextPage = () => {
           I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am passionate about building websites that can be used by everyone and a <Text as="span" display="inline-block">gamer 🎮.</Text>
         </Text>
 
-        <Section
+        <ProjectsSection
           id="experience"
           title="Experience"
           projects={professionalProjects}
         />
 
-        <Section
+        <ProjectsSection
           id="projects"
           title="Personal Projects"
           projects={personalProjects}

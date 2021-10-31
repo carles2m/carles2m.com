@@ -3,7 +3,7 @@
  * @returns Day of the week. For example "Friday".
  */
 export const getWeekDay = (): string => {
-    return new Date().toLocaleString("en-us", { weekday: "long" });
+  return new Date().toLocaleString("en-us", { weekday: "long" });
 };
 
 /**
@@ -11,5 +11,5 @@ export const getWeekDay = (): string => {
  * @returns Year. For example 2021
  */
 export const getYear = (): number => {
-    return new Date().getFullYear();
+  return new Date().getFullYear();
 };
