@@ -1,3 +1,5 @@
+export const minuteInMs = 60 * 1000;
+
 /**
  * Gets the current day of the week.
  * @returns Day of the week. For example "Friday".

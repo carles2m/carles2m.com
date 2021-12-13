@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
       as="header"
       top={0}
       position="sticky"
-      zIndex="docked"
+      zIndex="sticky"
       backdropFilter="saturate(180%) blur(20px) contrast(90%)"
       w="full"
       boxShadow="2xl"

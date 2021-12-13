@@ -14,7 +14,7 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { personalProjects, professionalProjects } from "../lib/constants";
-import { getWeekDay } from "../lib/dateUtil";
+import { getWeekDay, minuteInMs } from "../lib/dateUtil";
 import { theme } from "../lib/theme";
 
 const Index: NextPage = () => {
@@ -24,7 +24,7 @@ const Index: NextPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setDay(getWeekDay());
-    }, 60000);
+    }, minuteInMs);
 
     return () => clearInterval(interval);
   }, []);
