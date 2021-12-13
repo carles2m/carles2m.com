@@ -51,7 +51,7 @@ export const professionalProjects: { [key: string]: Project } = {
     year: 2021,
     name: "Microsoft Family Safety",
     image: family,
-    content: <Text as="span">I plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><ChakraNextLink isExternal href="https://family.microsoft.com">Family Safety website</ChakraNextLink></Text></Text>,
+    content: <Text as="span">Plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><ChakraNextLink isExternal href="https://family.microsoft.com">Family Safety website</ChakraNextLink></Text></Text>,
     tags: ["ASP.NET MVC 5", "React", "Fluent UI"]
   },
   consentxbox: {
