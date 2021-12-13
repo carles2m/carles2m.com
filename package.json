@@ -1,4 +1,9 @@
 {
+  "name": "carles2m",
+  "author": {
+    "name": "Carles Moreno Magrans",
+    "url": "https://carles2m.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next",
@@ -7,16 +12,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.16",
-    "@chakra-ui/react": "^1.6.10",
-    "@chakra-ui/system": "^1.7.4",
-    "@chakra-ui/theme": "^1.10.4",
-    "@chakra-ui/theme-tools": "1.2.2",
-    "@emotion/react": "11.5.0",
-    "@emotion/styled": "11.3.0",
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.7.3",
+    "@chakra-ui/system": "^1.8.3",
+    "@chakra-ui/theme": "^1.12.2",
+    "@chakra-ui/theme-tools": "^1.3.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "framer-motion": "^4.1.17",
-    "next": "latest",
-    "next-pwa": "^5.4.0",
+    "next": "^12.0.7",
+    "next-pwa": "^5.4.4",
     "next-seo": "^4.28.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,15 +29,15 @@
     "sharp": "^0.29.2"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.11.12",
     "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.2.0",
-    "@typescript-eslint/parser": "^5.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "12.0.1",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-next": "^12.0.7",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.5.3"
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.1"
 }
