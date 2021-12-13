@@ -7,11 +7,13 @@ import { IconType } from "react-icons/lib";
 
 import advanced21 from "../../public/21.webp";
 import bus from "../../public/bus.webp";
+import casal from "../../public/casal.webp";
 import excel from "../../public/excel.webp";
 import family from "../../public/family.webp";
 import microsoftaccount from "../../public/microsoftaccount.webp";
 import officelogoDark from "../../public/officelogo-dark.webp";
 import officelogoLight from "../../public/officelogo-light.webp";
+import profile from "../../public/profile.webp";
 import xbox from "../../public/xbox.webp";
 import { ChakraNextLink } from "../components/ChakraNextLink";
 
@@ -89,8 +91,8 @@ export const personalProjects: { [key: string]: Project } = {
   carles2m: {
     year: 2021,
     name: "carles2m.com",
-    image: "👋",
-    content: "This website you are watching. Responsive, fully accessible, and also works offline. Try it!",
+    image: profile,
+    content: "This website you are watching. Responsive, fully accessible, installable and working offline",
     tags: ["Next.js", "Chakra UI"]
   },
   advanced21: {
@@ -99,6 +101,20 @@ export const personalProjects: { [key: string]: Project } = {
     image: advanced21,
     content: "The most realistic way to play Blackjack without having to set foot in a casino",
     tags: ["Android", "iOS", "Unity 3d"]
+  },
+  basementSoftware: {
+    year: 2020,
+    name: "Basement Software",
+    image: "BS",
+    content: <Text as="span">Website of <ChakraNextLink isExternal href="https://basement.software">Basement Software</ChakraNextLink>, owner of <Text as="span" display="inline-block">Advanced 21 Blackjack</Text> and Wordland games</Text>,
+    tags: ["Hugo", "Google Firebase"]
+  },
+  casalCatalaSeattle: {
+    year: 2019,
+    name: "Casal Català de Seattle",
+    image: casal,
+    content: <Text as="span">Official page of the <ChakraNextLink isExternal href="https://www.casalcatalaseattle.org/">Seattle Catalan association</ChakraNextLink>, promoting the culture and Catalan language</Text>,
+    tags: ["Hugo", "Google Firebase", "Mailchimp"]
   },
   barcelonaBus: {
     year: 2014,
