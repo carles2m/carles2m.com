@@ -17,7 +17,7 @@ import { Project } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
 
 const height = 320;
-const width = 320;
+export const width = 320;
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const image = useColorModeValue(project.image, project.imageDark ?? project.image);
@@ -53,8 +53,6 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <Center
-      py="2vh"
-      px="1vw"
       ref={ref}
     >
       <Box
