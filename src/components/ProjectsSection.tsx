@@ -1,12 +1,12 @@
 import {
-  Flex,
   Heading,
+  SimpleGrid,
   Stack
 } from "@chakra-ui/react";
 import React from "react";
 
 import { Project } from "../lib/constants";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard, width as projectCardWidth } from "./ProjectCard";
 
 export const ProjectsSection: React.FC<{
   id: string
@@ -20,9 +20,9 @@ export const ProjectsSection: React.FC<{
     <Stack spacing="0.5rem" as="section" aria-labelledby={id}>
       <Heading as="h2" id={id}>{title}</Heading>
 
-      <Flex
-        wrap="wrap"
-        justifyContent="space-evenly"
+      <SimpleGrid
+        minChildWidth={projectCardWidth}
+        spacing={12}
       >
         {Object.values(projects).sort((p1, p2) => p2.year - p1.year).map(project => (
           <ProjectCard
@@ -30,6 +30,6 @@ export const ProjectsSection: React.FC<{
             project={project}
           />
         ))}
-      </Flex>
+      </SimpleGrid>
     </Stack>
   );

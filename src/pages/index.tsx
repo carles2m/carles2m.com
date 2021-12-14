@@ -33,9 +33,8 @@ const Index: NextPage = () => {
     navigator.serviceWorker.ready.then(() => {
       toast({
         title: <Text as="span"><ChakraLink textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
-        description: "You can go offline now",
         status: "success",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
         position: "top"
       });
@@ -59,7 +58,7 @@ const Index: NextPage = () => {
         </Heading>
 
         <Text fontSize="2xl">
-          I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am passionate about building websites that can be used by everyone and a <Text as="span" display="inline-block">gamer 🎮.</Text>
+          I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am a <Text as="span" display="inline-block">gamer 🎮</Text> passionate about building websites that can be used by everyone.
         </Text>
 
         <ProjectsSection
