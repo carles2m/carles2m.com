@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 
 import { SocialLink, socialLinks } from "../lib/constants";
 import { getYear } from "../lib/dateUtil";
+import { reportClick } from "../lib/gtag";
 
 const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
   <Tooltip label={link.name}>
@@ -20,6 +21,7 @@ const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
       rounded="full"
       as="a"
       href={link.href}
+      onClick={() => reportClick(link.href)}
       aria-label={link.name}
       transition="background 0.3s ease"
       bg="unset"
