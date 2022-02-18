@@ -51,27 +51,25 @@ export const Footer: React.FC = () => {
       mt="auto"
       pt={6}
     >
-      <Box
+      <Divider />
+      <Flex
+        maxW="6xl"
+        ml="auto"
+        mr="auto"
+        p={4}
+        pb={{ base: 2, md: 4 }}
+        direction={{ base: "column", md: "row" }}
         align="center"
+        gridGap={1}
       >
-        <Divider />
-        <Flex
-          maxW="6xl"
-          p={4}
-          pb={{ base: 2, md: 4 }}
-          direction={{ base: "column", md: "row" }}
-          align="center"
-          gridGap={1}
-        >
-          <Text>{`© ${year} Carles Moreno`}</Text>
-          <Spacer />
-          <HStack spacing={4}>
-            {Object.values(socialLinks).map((link) => (
-              <SocialButton key={link.name} link={link} />
-            ))}
-          </HStack>
-        </Flex>
-      </Box>
+        <Text>{`© ${year} Carles Moreno`}</Text>
+        <Spacer />
+        <HStack spacing={4}>
+          {Object.values(socialLinks).map((link) => (
+            <SocialButton key={link.name} link={link} />
+          ))}
+        </HStack>
+      </Flex>
     </Box>
   );
 };
