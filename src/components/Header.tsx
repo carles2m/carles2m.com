@@ -56,12 +56,13 @@ export const Header: React.FC = () => {
       boxShadow="2xl"
     >
       <Box
-        align="center"
         w="full"
       >
         <Box
-          px={4}
           maxW="6xl"
+          ml="auto"
+          mr="auto"
+          px={4}
         >
           <Flex h={16} alignItems="center" justifyContent="space-between">
             <Box display={{ md: "none" }} minW="48px">
