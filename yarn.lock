@@ -1552,28 +1552,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/icon@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@chakra-ui/icon@npm:2.0.4"
+"@chakra-ui/icon@npm:2.0.5":
+  version: 2.0.5
+  resolution: "@chakra-ui/icon@npm:2.0.5"
   dependencies:
-    "@chakra-ui/utils": 1.10.2
+    "@chakra-ui/utils": 1.10.4
   peerDependencies:
     "@chakra-ui/system": ">=1.0.0"
     react: ">=16.8.6"
-  checksum: e308d88ca2ed7e0157118bdb0ca139d50348e3235a7601b9021d70cae64ed88184ae6005450ce2e60b35f00ba0780eae1349df43917bf8cdf35f827f3d4dbf5a
+  checksum: 92ea1f695b5dab49d27d6d8ac4267ae47df3cb099c077cc49a99b29b064bba3693e2fda0f7f0bfec79d7f73a493da1607a45596c67ffc9e19284c1d021bcfe66
   languageName: node
   linkType: hard
 
-"@chakra-ui/icons@npm:^1.1.5":
-  version: 1.1.6
-  resolution: "@chakra-ui/icons@npm:1.1.6"
+"@chakra-ui/icons@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "@chakra-ui/icons@npm:1.1.7"
   dependencies:
-    "@chakra-ui/icon": 2.0.4
+    "@chakra-ui/icon": 2.0.5
     "@types/react": ^17.0.15
   peerDependencies:
     "@chakra-ui/system": ">=1.0.0"
     react: ">=16.8.6"
-  checksum: edebc8a1ad6b80e322991b13cc195a6fe25292da21bee5753786007d27520cfb08c4a6f3b031c78b2ec894402f9530a7bcc270790b345d330729f6b4bd531f18
+  checksum: c76dd4f7c9cf2eeecfdf82fc373c5eed27a51db5e52e5b360eeacb1660e1869d6f20fbb754c53f5e47ca8b37d80a0c8b60c188dce3ef976e8ba1fbb14e34d4c7
   languageName: node
   linkType: hard
 
@@ -2216,6 +2216,18 @@ __metadata:
     framesync: 5.3.0
     lodash.mergewith: 4.6.2
   checksum: 4c42399447ce83576a6c3f0305438cc9311a86d006c46d5593ceaa596df8671882d10276b35568126aee7c72735eabe1e658cd921f69407fbf0ac7311925b70b
+  languageName: node
+  linkType: hard
+
+"@chakra-ui/utils@npm:1.10.4":
+  version: 1.10.4
+  resolution: "@chakra-ui/utils@npm:1.10.4"
+  dependencies:
+    "@types/lodash.mergewith": 4.6.6
+    css-box-model: 1.2.1
+    framesync: 5.3.0
+    lodash.mergewith: 4.6.2
+  checksum: a97bf839b6569c1b420825fcab4a0b9d599d0c3752839cd01d72f4b8c2191e32da72a10727a84f5b13784ee1985083412c98855c25a42427dfb28290f37e8214
   languageName: node
   linkType: hard
 
@@ -3536,7 +3548,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "carles2m@workspace:."
   dependencies:
-    "@chakra-ui/icons": ^1.1.5
+    "@chakra-ui/icons": ^1.1.7
     "@chakra-ui/react": ^1.8.3
     "@chakra-ui/system": ^1.10.3
     "@chakra-ui/theme": ^1.13.2
