@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
             <HStack spacing={8} alignItems="center">
               <Popover trigger="hover" isLazy>
                 <PopoverTrigger>
-                  <Box>
+                  <Flex alignItems="center">
                     <ChakraNextImage
                       borderRadius="full"
                       src={profile}
@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
                       width={48}
                       placeholder="blur"
                     />
-                  </Box>
+                  </Flex>
                 </PopoverTrigger>
                 <Portal>
                   <PopoverContent>
