@@ -45,7 +45,7 @@ const Index: NextPage = () => {
     <Container>
       <Header />
       <Main>
-        <Heading as="h1" size="2xl" pt="4vh">
+        <Heading as="h1" size="2xl" pt="2rem">
           {`Happy ${day}! `}
           <Text
             as="span"
