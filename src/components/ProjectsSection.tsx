@@ -17,7 +17,7 @@ export const ProjectsSection: React.FC<{
   title,
   projects
 }) => (
-    <Stack spacing="0.5rem" as="section" aria-labelledby={id}>
+    <Stack spacing="1rem" as="section" aria-labelledby={id}>
       <Heading as="h2" id={id}>{title}</Heading>
 
       <SimpleGrid
