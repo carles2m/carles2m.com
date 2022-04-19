@@ -1,6 +1,7 @@
 import {
   Text,
 } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
