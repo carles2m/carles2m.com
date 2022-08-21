@@ -32,7 +32,7 @@ const Index: NextPage = () => {
   if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then(() => {
       toast({
-        title: <Text as="span"><ChakraLink textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
+        title: <Text as="span"><ChakraLink variant="bw" textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
         status: "success",
         duration: 5000,
         isClosable: true,

@@ -13,13 +13,16 @@ export const theme = extendTheme(
   {
     config,
     colors: {
-      brand: base.colors.red
+      brand: base.colors.blue
     },
     components: {
       Link: {
         variants: {
           "branded": (props) => ({
-            color: props.colorMode === "dark" ? "brand.400" : "brand.600"
+            color: props.colorMode === "dark" ? "brand.300" : "brand.700"
+          }),
+          "bw": (props) => ({
+            color: props.colorMode === "dark" ? "black" : "white"
           })
         }
       }

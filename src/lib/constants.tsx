@@ -94,7 +94,7 @@ export const personalProjects: { [key: string]: Project } = {
     name: "carles2m.com",
     image: profile,
     content: "This website you are watching. Responsive, fully accessible, installable and working offline",
-    tags: ["Next.js", "Chakra UI"]
+    tags: ["Next.js", "Chakra UI", "Vercel"]
   },
   advanced21: {
     year: 2020,
