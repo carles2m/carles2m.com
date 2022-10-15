@@ -11,9 +11,10 @@ import bus from "../../public/bus.webp";
 import casal from "../../public/casal.webp";
 import excel from "../../public/excel.webp";
 import family from "../../public/family.webp";
-import microsoftaccount from "../../public/microsoftaccount.webp";
-import officelogoDark from "../../public/officelogo-dark.webp";
-import officelogoLight from "../../public/officelogo-light.webp";
+import microsoft365Logo from "../../public/microsoft365logo.webp";
+import microsoftAccount from "../../public/microsoftaccount.webp";
+import officeLogoDark from "../../public/officelogo-dark.webp";
+import officeLogoLight from "../../public/officelogo-light.webp";
 import profile from "../../public/profile.webp";
 import xbox from "../../public/xbox.webp";
 import { ChakraNextLink } from "../components/ChakraNextLink";
@@ -50,6 +51,13 @@ export interface Project {
 }
 
 export const professionalProjects: { [key: string]: Project } = {
+  m365Growth: {
+    year: 2021,
+    name: "Microsoft 365 Growth",
+    image: microsoft365Logo,
+    content: <Text as="span">Supervise the execution to increase Microsoft 365 subscribers across consumers and SMB</Text>,
+    tags: [".NET 6", "React", "Fluent UI"]
+  },
   family: {
     year: 2021,
     name: "Microsoft Family Safety",
@@ -57,7 +65,7 @@ export const professionalProjects: { [key: string]: Project } = {
     content: <Text as="span">Plan the roadmap and supervise the execution of the <Text as="span" display="inline-block"><ChakraNextLink isExternal href="https://family.microsoft.com">Family Safety website</ChakraNextLink></Text></Text>,
     tags: ["ASP.NET MVC 5", "React", "Fluent UI"]
   },
-  consentxbox: {
+  consentXbox: {
     year: 2018,
     name: "Xbox Parental Consent",
     image: xbox,
@@ -67,7 +75,7 @@ export const professionalProjects: { [key: string]: Project } = {
   amc: {
     year: 2015,
     name: "Microsoft Account",
-    image: microsoftaccount,
+    image: microsoftAccount,
     content: <Text as="span">Consolidated multiple forms of data in one <ChakraNextLink isExternal href="https://account.microsoft.com/services" aria-label="Microsoft Account">website</ChakraNextLink> for users to manage all Microsoft subscriptions</Text>,
     tags: ["ASP.NET MVC 5", "AngularJs", "MWF"]
   },
@@ -81,8 +89,8 @@ export const professionalProjects: { [key: string]: Project } = {
   office365: {
     year: 2010,
     name: "Microsoft Office 365",
-    image: officelogoLight,
-    imageDark: officelogoDark,
+    image: officeLogoLight,
+    imageDark: officeLogoDark,
     content: <Text as="span">Built the first websites to <Text as="em">purchase</Text> and <Text as="em">manage</Text> consumer <Text as="span" display="inline-block">Microsoft Office 365 subscriptions</Text></Text>,
     tags: ["ASP.NET", "jQuery"]
   },
