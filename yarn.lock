@@ -3630,7 +3630,7 @@ __metadata:
     framer-motion: 6.5.1
     next: 12.2.5
     next-pwa: 5.6.0
-    next-seo: 5.9.0
+    next-seo: 5.13.0
     react: 17.0.2
     react-dom: 17.0.2
     react-icons: 4.6.0
@@ -5999,14 +5999,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-seo@npm:5.9.0":
-  version: 5.9.0
-  resolution: "next-seo@npm:5.9.0"
+"next-seo@npm:5.13.0":
+  version: 5.13.0
+  resolution: "next-seo@npm:5.13.0"
   peerDependencies:
     next: ^8.1.1-canary.54 || >=9.0.0
     react: ">=16.0.0"
     react-dom: ">=16.0.0"
-  checksum: bcf9539756d9877ad3bbbc7ed225155837176c206674bac66a0f00e3e02ff20aa32fabf97ae9bc5578685e88d91b0467c193f6aaf9513bf5fbe9b472bc41c4ab
+  checksum: f566dfe6bafa18953789fc7bb0f466432c64121a80bc40e32a82d3d4e5d8cc16cc217ca5f6a4bf088f530b263d97cb6e6b237b7bdb6ffcfa16d01008d007a291
   languageName: node
   linkType: hard
 
