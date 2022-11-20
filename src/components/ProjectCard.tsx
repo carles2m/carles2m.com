@@ -16,8 +16,7 @@ import { scaleInCenter } from "../lib/animations";
 import { Project } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
 
-const height = 320;
-export const width = 320;
+export const cardImageBoxSize = 320;
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const image = useColorModeValue(project.image, project.imageDark ?? project.image);
@@ -32,8 +31,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   const imageElement = typeof image === "string"
     ? (
       <Center
-        height={height}
-        width={width}
+        height={cardImageBoxSize}
+        width={cardImageBoxSize}
         fontSize="9xl"
       >
         {image}
@@ -41,10 +40,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     )
     : (
       <ChakraNextImage
-        roundedTop="lg"
-        height={height}
-        width={width}
-        objectFit="cover"
+        boxSize={`${cardImageBoxSize}px`}
         src={image}
         alt=""
         placeholder="blur"
