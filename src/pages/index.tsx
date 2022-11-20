@@ -64,4 +64,7 @@ const Index: NextPage = () => {
   );
 };
 
+// use `getServerSideProps` in actual page
+export { getServerSideProps } from "../lib/Chakra";
+
 export default Index;

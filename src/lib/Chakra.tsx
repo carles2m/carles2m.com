@@ -3,10 +3,11 @@ import {
   cookieStorageManagerSSR,
   localStorageManager,
 } from "@chakra-ui/react";
+import { GetServerSideProps } from "next";
 
 import { theme } from "./theme";
 
-export const Chakra: React.FC<{ cookies: unknown }> = ({
+export const Chakra: React.FC<{ cookies?: string }> = ({
   cookies,
   children
 }) => {
@@ -21,7 +22,8 @@ export const Chakra: React.FC<{ cookies: unknown }> = ({
   );
 };
 
-export function getServerSideProps({ req }) {
+// from https://chakra-ui.com/docs/styled-system/color-mode#add-colormodemanager-optional-for-ssr
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
     props: {
       // first time users will not have any cookies and you may not return
@@ -29,4 +31,4 @@ export function getServerSideProps({ req }) {
       cookies: req.headers.cookie ?? "",
     },
   };
-}
+};
