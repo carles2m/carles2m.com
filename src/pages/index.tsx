@@ -1,8 +1,8 @@
 import {
-  createStandaloneToast,
   Heading,
   Link as ChakraLink,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
@@ -19,7 +19,7 @@ import { theme } from "../lib/theme";
 
 const Index: NextPage = () => {
   const [day, setDay] = useState(getWeekDay());
-  const toast = createStandaloneToast();
+  const toast = useToast();
 
   useEffect(() => {
     const interval = setInterval(() => {
