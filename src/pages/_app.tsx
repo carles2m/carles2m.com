@@ -1,3 +1,8 @@
+import {
+  Link as ChakraLink,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
@@ -8,37 +13,53 @@ import SEO from "../../next-seo.config";
 import { Chakra } from "../lib/Chakra";
 import { GA_TRACKING_ID, GA_TRACKING_ID_2 } from "../lib/gtag";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <>
-    <NextSeo {...SEO} />
-    <Chakra cookies={pageProps.cookies}>
-      <Head>
-        <title>Carles Moreno</title>
-        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const toast = useToast();
 
-        <script
-          id="google-analytics"
-          async
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments);}
-              gtag('js', new Date());
-    
-              gtag('config', '${GA_TRACKING_ID}');
-              gtag('config', '${GA_TRACKING_ID_2}');
-            `
-          }}
+  if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
+    navigator.serviceWorker.ready.then(() => {
+      toast({
+        title: <Text as="span"><ChakraLink variant="bw" textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top"
+      });
+    });
+  }
+
+  return (
+    <>
+      <NextSeo {...SEO} />
+      <Chakra cookies={pageProps.cookies}>
+        <Head>
+          <title>Carles Moreno</title>
+          <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
+
+          <script
+            id="google-analytics"
+            async
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+      
+                gtag('config', '${GA_TRACKING_ID}');
+                gtag('config', '${GA_TRACKING_ID_2}');
+              `
+            }}
+          />
+        </Head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
         />
-      </Head>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        strategy="afterInteractive"
-      />
-      <Component {...pageProps} />
-    </Chakra>
-  </>
-);
+        <Component {...pageProps} />
+      </Chakra>
+    </>
+  );
+};
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric);

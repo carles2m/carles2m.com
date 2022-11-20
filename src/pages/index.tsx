@@ -1,8 +1,6 @@
 import {
   Heading,
-  Link as ChakraLink,
   Text,
-  useToast,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
@@ -19,7 +17,6 @@ import { theme } from "../lib/theme";
 
 const Index: NextPage = () => {
   const [day, setDay] = useState(getWeekDay());
-  const toast = useToast();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,18 +25,6 @@ const Index: NextPage = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then(() => {
-      toast({
-        title: <Text as="span"><ChakraLink variant="bw" textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "top"
-      });
-    });
-  }
 
   return (
     <Container>
