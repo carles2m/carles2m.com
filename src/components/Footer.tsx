@@ -33,8 +33,12 @@ const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
   </Tooltip>
 );
 
-export const Footer: React.FC = () => {
-  const [year, setYear] = useState(getYear());
+interface FooterProps {
+  initialYear: number;
+}
+
+export const Footer: React.FC<FooterProps> = ({ initialYear }) => {
+  const [year, setYear] = useState(initialYear);
 
   useEffect(() => {
     const interval = setInterval(() => {

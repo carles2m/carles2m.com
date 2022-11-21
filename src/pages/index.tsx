@@ -2,7 +2,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import React, { useEffect, useState } from "react";
 
 import { ChakraNextLink } from "../components/ChakraNextLink";
@@ -12,11 +12,16 @@ import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { personalProjects, professionalProjects } from "../lib/constants";
-import { getWeekDay, minuteInMs } from "../lib/dateUtil";
+import { getWeekDay, getYear, minuteInMs } from "../lib/dateUtil";
 import { theme } from "../lib/theme";
 
-const Index: NextPage = () => {
-  const [day, setDay] = useState(getWeekDay());
+interface IndexPageProps {
+  initialDay: string;
+  initialYear: number;
+}
+
+const Index: NextPage<IndexPageProps> = ({ initialDay, initialYear }) => {
+  const [day, setDay] = useState(initialDay);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,12 +64,24 @@ const Index: NextPage = () => {
         />
       </Main>
 
-      <Footer />
+      <Footer initialYear={initialYear} />
     </Container>
   );
 };
 
 // use `getServerSideProps` in actual page
-export { getServerSideProps } from "../lib/Chakra";
+import { getServerSideProps as getServerSideCookieProps } from "../lib/Chakra";
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const cookieProps = await getServerSideCookieProps(context);
+
+  return {
+    props: {
+      initialDay: getWeekDay(),
+      initialYear: getYear(),
+      ...cookieProps,
+    },
+  };
+};
 
 export default Index;
