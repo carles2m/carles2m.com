@@ -1,7 +1,7 @@
 import {
+  createStandaloneToast,
   Link as ChakraLink,
   Text,
-  useToast,
 } from "@chakra-ui/react";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
@@ -13,9 +13,9 @@ import SEO from "../../next-seo.config";
 import { Chakra } from "../lib/Chakra";
 import { GA_TRACKING_ID, GA_TRACKING_ID_2 } from "../lib/gtag";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const toast = useToast();
+const { ToastContainer, toast } = createStandaloneToast();
 
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then(() => {
       toast({
@@ -31,6 +31,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <NextSeo {...SEO} />
+      <ToastContainer />
       <Chakra cookies={pageProps.cookies}>
         <Head>
           <title>Carles Moreno</title>
