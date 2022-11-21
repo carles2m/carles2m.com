@@ -40,7 +40,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     )
     : (
       <ChakraNextImage
-        boxSize={`${cardImageBoxSize}px`}
+        roundedTop="lg"
+        boxSize={`${cardImageBoxSize - 2}px`}
         src={image}
         alt=""
         placeholder="blur"
