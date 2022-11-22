@@ -34,9 +34,11 @@ const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
 );
 
 export const Footer: React.FC = () => {
-  const [year, setYear] = useState(getYear());
+  const [year, setYear] = useState(null);
 
   useEffect(() => {
+    setYear(getYear());
+
     const interval = setInterval(() => {
       setYear(getYear());
     }, 60000);
@@ -62,7 +64,7 @@ export const Footer: React.FC = () => {
         align="center"
         gridGap={1}
       >
-        <Text>{`© ${year} Carles Moreno`}</Text>
+        <Text>{`© ${year ?? ""} Carles Moreno`}</Text>
         <Spacer />
         <HStack spacing={4}>
           {Object.values(socialLinks).map((link) => (

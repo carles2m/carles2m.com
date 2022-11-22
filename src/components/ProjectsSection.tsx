@@ -6,7 +6,7 @@ import {
 import React from "react";
 
 import { Project } from "../lib/constants";
-import { ProjectCard, width as projectCardWidth } from "./ProjectCard";
+import { cardImageBoxSize, ProjectCard } from "./ProjectCard";
 
 export const ProjectsSection: React.FC<{
   id: string
@@ -21,7 +21,7 @@ export const ProjectsSection: React.FC<{
       <Heading as="h2" id={id}>{title}</Heading>
 
       <SimpleGrid
-        minChildWidth={projectCardWidth}
+        minChildWidth={cardImageBoxSize}
         spacing={12}
       >
         {Object.values(projects).sort((p1, p2) => p2.year - p1.year).map(project => (

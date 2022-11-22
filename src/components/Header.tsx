@@ -5,9 +5,9 @@ import {
   Flex,
   HStack,
   Popover,
+  PopoverArrow,
   PopoverContent,
   PopoverTrigger,
-  Portal,
   Stack,
   useColorMode,
   useColorModeValue,
@@ -78,30 +78,28 @@ export const Header: React.FC = () => {
             </Box>
 
             <HStack spacing={8} alignItems="center">
-              <Popover trigger="hover" isLazy>
-                <PopoverTrigger>
-                  <Flex alignItems="center">
-                    <ChakraNextImage
-                      borderRadius="full"
-                      src={profile}
-                      alt="Carles Moreno"
-                      height={48}
-                      width={48}
-                      placeholder="blur"
-                    />
-                  </Flex>
-                </PopoverTrigger>
-                <Portal>
+              <Box>
+                <Popover trigger="hover" isLazy>
+                  <PopoverTrigger>
+                    <Flex alignItems="center">
+                      <ChakraNextImage
+                        borderRadius="full"
+                        src={profile}
+                        alt="Carles Moreno"
+                        boxSize="48px"
+                        placeholder="blur"
+                      />
+                    </Flex>
+                  </PopoverTrigger>
                   <PopoverContent>
+                    <PopoverArrow />
                     <ChakraNextImage
                       src={profile}
                       alt="Carles Moreno"
-                      height={512}
-                      width={512}
                     />
                   </PopoverContent>
-                </Portal>
-              </Popover>
+                </Popover>
+              </Box>
               <Box
                 as="nav"
                 display={{ base: "none", md: "flex" }}

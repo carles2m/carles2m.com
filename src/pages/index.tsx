@@ -1,10 +1,10 @@
 import {
-  createStandaloneToast,
+  Box,
   Heading,
-  Link as ChakraLink,
   Text,
+  usePrefersReducedMotion,
 } from "@chakra-ui/react";
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import React, { useEffect, useState } from "react";
 
 import { ChakraNextLink } from "../components/ChakraNextLink";
@@ -13,15 +13,18 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { ProjectsSection } from "../components/ProjectsSection";
+import { appear } from "../lib/animations";
 import { personalProjects, professionalProjects } from "../lib/constants";
 import { getWeekDay, minuteInMs } from "../lib/dateUtil";
 import { theme } from "../lib/theme";
 
 const Index: NextPage = () => {
-  const [day, setDay] = useState(getWeekDay());
-  const toast = createStandaloneToast();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [day, setDay] = useState(null);
 
   useEffect(() => {
+    setDay(getWeekDay());
+
     const interval = setInterval(() => {
       setDay(getWeekDay());
     }, minuteInMs);
@@ -29,24 +32,16 @@ const Index: NextPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then(() => {
-      toast({
-        title: <Text as="span"><ChakraLink variant="bw" textDecor="underline" isExternal href="https://developer.mozilla.org/docs/Web/Progressive_web_apps">PWA</ChakraLink> active</Text>,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "top"
-      });
-    });
-  }
-
   return (
     <Container>
       <Header />
       <Main>
         <Heading as="h1" size="2xl" pt="2rem">
-          {`Happy ${day}! `}
+          {day &&
+            <Box display="inline-block" css={!prefersReducedMotion ? appear : undefined}>
+              <Text as="span">Happy {day}!&nbsp;</Text>
+            </Box>
+          }
           <Text
             as="span"
             bgGradient={`linear(to-r, ${theme.colors.red[500]}, ${theme.colors.purple[500]})`}
@@ -77,6 +72,19 @@ const Index: NextPage = () => {
       <Footer />
     </Container>
   );
+};
+
+// use `getServerSideProps` in actual page
+import { getServerSideProps as getServerSideCookieProps } from "../lib/Chakra";
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const cookieProps = await getServerSideCookieProps(context);
+
+  return {
+    props: {
+      ...cookieProps,
+    },
+  };
 };
 
 export default Index;
