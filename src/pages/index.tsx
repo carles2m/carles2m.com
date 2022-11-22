@@ -75,16 +75,6 @@ const Index: NextPage = () => {
 };
 
 // use `getServerSideProps` in actual page
-import { getServerSideProps as getServerSideCookieProps } from "../lib/Chakra";
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const cookieProps = await getServerSideCookieProps(context);
-
-  return {
-    props: {
-      ...cookieProps,
-    },
-  };
-};
+export { getServerSideProps } from "../lib/Chakra";
 
 export default Index;
