@@ -4,7 +4,7 @@ import {
   Text,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
-import { GetServerSideProps, NextPage } from "next";
+import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 
 import { ChakraNextLink } from "../components/ChakraNextLink";
