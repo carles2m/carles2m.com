@@ -20,7 +20,7 @@
     "@chakra-ui/theme-tools": "2.0.13",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
-    "framer-motion": "7.6.9",
+    "framer-motion": "7.6.12",
     "next": "13.0.4",
     "next-pwa": "5.6.0",
     "next-seo": "5.14.1",
