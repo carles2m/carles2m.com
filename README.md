@@ -3,6 +3,7 @@
 <p align="center">
   <img alt="NodeJs dependency version (dev)" src="https://img.shields.io/badge/node-%5E18.12.1-blue">
   <img alt="TypeScript dependency version (dev)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/dev/typescript">
+  <img alt="React dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/react">
   <img alt="Next dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next">
   <img alt="Next-PWA dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next-pwa">
   <img alt="Next-SEO dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next-seo">

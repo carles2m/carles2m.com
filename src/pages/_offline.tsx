@@ -3,11 +3,12 @@ import Head from "next/head";
 import React from "react";
 
 import { ChakraNextLink } from "../components/ChakraNextLink";
+import { profileName } from "../lib/content";
 
 const Offline = () => (
   <>
     <Head>
-      <title>Carles Moreno</title>
+      <title>{profileName}</title>
     </Head>
     <Center h="100vh">
       <VStack spacing={4}>

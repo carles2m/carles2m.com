@@ -13,12 +13,18 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 
 import { scaleInCenter } from "../lib/animations";
-import { Project } from "../lib/constants";
+import { Project } from "../lib/content-types";
 import { ChakraNextImage } from "./ChakraNextImage";
 
 export const cardImageBoxSize = 320;
 
-export const ProjectCard = ({ project }: { project: Project }) => {
+interface ProjectCardProps {
+  project: Project
+}
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  project
+}) => {
   const image = useColorModeValue(project.image, project.imageDark ?? project.image);
 
   const prefersReducedMotion = usePrefersReducedMotion();

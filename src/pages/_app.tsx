@@ -10,13 +10,17 @@ import { NextSeo } from "next-seo";
 import React from "react";
 
 import SEO from "../../next-seo.config";
-import { Chakra } from "../lib/Chakra";
+import { Chakra } from "../components/Chakra";
+import { profileName } from "../lib/content";
 import { GA_TRACKING_ID, GA_TRACKING_ID_2 } from "../lib/gtag";
 
 const { ToastContainer, toast } = createStandaloneToast();
 const pwaToastId = "pwa-toast";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.FC<AppProps> = ({
+  Component,
+  pageProps
+}) => {
   if (typeof (navigator) !== "undefined" && "serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then(() => {
       if (!toast.isActive(pwaToastId)) {
@@ -38,7 +42,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <ToastContainer />
       <Chakra cookies={pageProps.cookies}>
         <Head>
-          <title>Carles Moreno</title>
+          <title>{profileName}</title>
           <meta name="viewport" content="initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
 
           <script
