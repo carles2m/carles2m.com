@@ -1,20 +1,20 @@
 import {
   Box,
+  Flex,
   Heading,
   Text,
+  useColorModeValue,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 
-import { ChakraNextLink } from "../components/ChakraNextLink";
-import { Container } from "../components/Container";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { appear } from "../lib/animations";
-import { personalProjects, professionalProjects } from "../lib/constants";
+import { personalProjects, professionalProjects, profileDescription, profileName, profilePicture, socialLinks } from "../lib/content";
 import { getWeekDay, minuteInMs } from "../lib/dateUtil";
 import { theme } from "../lib/theme";
 
@@ -33,8 +33,15 @@ const Index: NextPage = () => {
   }, []);
 
   return (
-    <Container>
-      <Header />
+    <Flex
+      direction="column"
+      alignItems="center"
+      justifyContent="flex-start"
+      minH="100vh"
+      bg={useColorModeValue("gray.50", "gray.900")}
+      color={useColorModeValue("black", "white")}
+    >
+      <Header profileName={profileName} profilePicture={profilePicture} />
       <Main>
         <Heading as="h1" size="2xl" pt="2rem">
           {day &&
@@ -48,12 +55,12 @@ const Index: NextPage = () => {
             bgClip="text"
             display="inline-block"
           >
-            I&apos;m Carles Moreno
+            I&apos;m {profileName}
           </Text>
         </Heading>
 
         <Text fontSize="2xl">
-          I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am a <Text as="span" display="inline-block">gamer 🎮</Text> passionate about building websites that can be used by everyone.
+          {profileDescription}
         </Text>
 
         <ProjectsSection
@@ -69,12 +76,12 @@ const Index: NextPage = () => {
         />
       </Main>
 
-      <Footer />
-    </Container>
+      <Footer profileName={profileName} links={socialLinks} />
+    </Flex>
   );
 };
 
 // use `getServerSideProps` in actual page
-export { getServerSideProps } from "../lib/Chakra";
+export { getServerSideProps } from "../components/Chakra";
 
 export default Index;

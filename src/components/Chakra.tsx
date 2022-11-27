@@ -5,7 +5,7 @@ import {
 } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 
-import { theme } from "./theme";
+import { theme } from "../lib/theme";
 
 interface ChakraProps extends React.PropsWithChildren {
   cookies?: string;

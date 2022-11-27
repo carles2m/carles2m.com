@@ -5,14 +5,16 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-import { Project } from "../lib/constants";
+import { Project } from "../lib/content-types";
 import { cardImageBoxSize, ProjectCard } from "./ProjectCard";
 
-export const ProjectsSection: React.FC<{
-  id: string
-  title: string
+interface ProjectsSectionProps {
+  id: string,
+  title: string,
   projects: { [key: string]: Project }
-}> = ({
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   id,
   title,
   projects

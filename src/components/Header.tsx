@@ -1,4 +1,4 @@
-import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -9,41 +9,23 @@ import {
   PopoverContent,
   PopoverTrigger,
   Stack,
-  useColorMode,
-  useColorModeValue,
-  useDisclosure
+  useColorMode
 } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
 import React from "react";
 
-import profile from "../../public/profile.webp";
-import { headerLinks } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
-import { ChakraNextLink } from "./ChakraNextLink";
 
-const NavLink: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <Box
-    as="li"
-    listStyleType="none"
-  >
-    <ChakraNextLink
-      px={2}
-      py={1}
-      rounded="md"
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      href="#"
-      transition="background 0.3s ease"
-    >
-      {children}
-    </ChakraNextLink>
-  </Box>
-);
+interface HeaderProps {
+  profileName: string,
+  profilePicture: StaticImageData
+}
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({
+  profileName,
+  profilePicture
+}) => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box
@@ -65,17 +47,7 @@ export const Header: React.FC = () => {
           px={4}
         >
           <Flex h={16} alignItems="center" justifyContent="space-between">
-            <Box display={{ md: "none" }} minW="48px">
-              {!!headerLinks.length && <Button
-                onClick={isOpen ? onClose : onOpen}
-                bg="unset"
-                aria-label="Open Menu"
-                display={{ md: "none" }}
-                transition="background 0.3s ease"
-              >
-                {isOpen ? <CloseIcon /> : <HamburgerIcon />}
-              </Button>}
-            </Box>
+            <Box display={{ md: "none" }} minW="48px" />
 
             <HStack spacing={8} alignItems="center">
               <Box>
@@ -84,8 +56,8 @@ export const Header: React.FC = () => {
                     <Flex alignItems="center">
                       <ChakraNextImage
                         borderRadius="full"
-                        src={profile}
-                        alt="Carles Moreno"
+                        src={profilePicture}
+                        alt={profileName}
                         boxSize="48px"
                         placeholder="blur"
                       />
@@ -94,24 +66,11 @@ export const Header: React.FC = () => {
                   <PopoverContent>
                     <PopoverArrow />
                     <ChakraNextImage
-                      src={profile}
-                      alt="Carles Moreno"
+                      src={profilePicture}
+                      alt={profileName}
                     />
                   </PopoverContent>
                 </Popover>
-              </Box>
-              <Box
-                as="nav"
-                display={{ base: "none", md: "flex" }}
-              >
-                <HStack
-                  as="ul"
-                  spacing={4}
-                >
-                  {headerLinks.map((link) => (
-                    <NavLink key={link}>{link}</NavLink>
-                  ))}
-                </HStack>
               </Box>
             </HStack>
 
@@ -128,24 +87,6 @@ export const Header: React.FC = () => {
               </Stack>
             </Flex>
           </Flex>
-
-          {isOpen ? (
-            <Box
-              as="nav"
-              pb={4}
-              display={{ md: "none" }}
-            >
-              <Stack
-                as="ul"
-                pt={4}
-                spacing={4}
-              >
-                {headerLinks.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
-              </Stack>
-            </Box>
-          ) : null}
         </Box>
       </Box>
     </Box>

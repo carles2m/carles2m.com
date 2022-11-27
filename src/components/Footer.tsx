@@ -11,29 +11,19 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-import { SocialLink, socialLinks } from "../lib/constants";
+import { SocialLink } from "../lib/content-types";
 import { getYear } from "../lib/dateUtil";
 import { reportClick } from "../lib/gtag";
 
-const SocialButton: React.FC<{ link: SocialLink }> = ({ link }) => (
-  <Tooltip label={link.name}>
-    <IconButton
-      rounded="full"
-      as="a"
-      href={link.href}
-      onClick={() => reportClick(link.href)}
-      aria-label={link.name}
-      transition="background 0.3s ease"
-      bg="unset"
-      _hover={{
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      icon={<link.icon />}
-    />
-  </Tooltip>
-);
+interface FooterProps {
+  profileName: string,
+  links: { [key: string]: SocialLink }
+}
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<FooterProps> = ({
+  profileName,
+  links
+}) => {
   const [year, setYear] = useState(null);
 
   useEffect(() => {
@@ -64,10 +54,10 @@ export const Footer: React.FC = () => {
         align="center"
         gridGap={1}
       >
-        <Text>{`© ${year ?? ""} Carles Moreno`}</Text>
+        <Text>{`© ${year ?? ""} ${profileName}`}</Text>
         <Spacer />
         <HStack spacing={4}>
-          {Object.values(socialLinks).map((link) => (
+          {Object.values(links).map((link) => (
             <SocialButton key={link.name} link={link} />
           ))}
         </HStack>
@@ -75,3 +65,27 @@ export const Footer: React.FC = () => {
     </Box>
   );
 };
+
+interface SocialButtonProps {
+  link: SocialLink
+}
+
+const SocialButton: React.FC<SocialButtonProps> = ({
+  link
+}) => (
+  <Tooltip label={link.name}>
+    <IconButton
+      rounded="full"
+      as="a"
+      href={link.href}
+      onClick={() => reportClick(link.href)}
+      aria-label={link.name}
+      transition="background 0.3s ease"
+      bg="unset"
+      _hover={{
+        bg: useColorModeValue("gray.200", "gray.700"),
+      }}
+      icon={<link.icon />}
+    />
+  </Tooltip>
+);

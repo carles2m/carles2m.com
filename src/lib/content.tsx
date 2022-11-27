@@ -1,10 +1,9 @@
 import {
+  LinkProps,
   Text,
 } from "@chakra-ui/react";
-import { StaticImageData } from "next/image";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IconType } from "react-icons/lib";
 
 import advanced21 from "../../public/21.webp";
 import bus from "../../public/bus.webp";
@@ -18,37 +17,15 @@ import officeLogoLight from "../../public/officelogo-light.webp";
 import profile from "../../public/profile.webp";
 import xbox from "../../public/xbox.webp";
 import { ChakraNextLink } from "../components/ChakraNextLink";
+import { Project, SocialLink } from "./content-types";
 
-export const headerLinks = [
+
+export const profileName = "Carles Moreno";
+export const profilePicture = profile;
+export const profileDescription = <>I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am a <Text as="span" display="inline-block">gamer 🎮</Text> passionate about building websites that can be used by everyone.</>;
+
+export const headerLinks: readonly LinkProps[] = [
 ] as const;
-
-export interface SocialLink {
-  name: string
-  href: string
-  icon: IconType
-}
-
-export const socialLinks: { [key: string]: SocialLink } = {
-  linkedin: {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/carles2m",
-    icon: FaLinkedin
-  },
-  github: {
-    name: "GitHub",
-    href: "https://github.com/carles2m",
-    icon: FaGithub
-  }
-} as const;
-
-export interface Project {
-  year: number
-  name: string
-  image: StaticImageData | string
-  imageDark?: StaticImageData
-  content: string | React.ReactElement,
-  tags: readonly string[]
-}
 
 export const professionalProjects: { [key: string]: Project } = {
   m365Growth: {
@@ -132,4 +109,17 @@ export const personalProjects: { [key: string]: Project } = {
     content: "Get realtime bus time arrivals, find bus stops, and see bus lines in an interactive map",
     tags: ["Windows Phone", "Node.js", "MongoDB"]
   },
+} as const;
+
+export const socialLinks: { [key: string]: SocialLink } = {
+  linkedin: {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/carles2m",
+    icon: FaLinkedin
+  },
+  github: {
+    name: "GitHub",
+    href: "https://github.com/carles2m",
+    icon: FaGithub
+  }
 } as const;
