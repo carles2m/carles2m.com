@@ -3146,14 +3146,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.52":
-  version: 17.0.52
-  resolution: "@types/react@npm:17.0.52"
+"@types/react@npm:18.0.25":
+  version: 18.0.25
+  resolution: "@types/react@npm:18.0.25"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: a51b98dd87838d161278fdf9dd78e6a4ff8c018f406d6647f77963e144fb52a8beee40c89fd0e7e840eaeaa8bd9fe2f34519410540b1a52d43a6f8b4d2fbce33
+  checksum: 231d658c45abdef044a716b4502774f1585d8336d73b2f5bd68f181acbfc874b7a457686ecd29b415b43ed0922c309bab7e2cf96832d188a3f4f1b02f2af760a
   languageName: node
   linkType: hard
 
@@ -3915,7 +3915,7 @@ __metadata:
     "@emotion/styled": 11.10.5
     "@types/gtag.js": 0.0.12
     "@types/node": 18.11.9
-    "@types/react": 17.0.52
+    "@types/react": 18.0.25
     "@types/react-dom": 17.0.18
     "@typescript-eslint/eslint-plugin": 5.44.0
     "@typescript-eslint/parser": 5.44.0
