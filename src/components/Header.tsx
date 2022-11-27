@@ -20,7 +20,7 @@ import { headerLinks } from "../lib/constants";
 import { ChakraNextImage } from "./ChakraNextImage";
 import { ChakraNextLink } from "./ChakraNextLink";
 
-const NavLink: React.FC = ({ children }) => (
+const NavLink: React.FC<React.PropsWithChildren> = ({ children }) => (
   <Box
     as="li"
     listStyleType="none"
