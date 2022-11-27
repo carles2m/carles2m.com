@@ -7,7 +7,11 @@ import { GetServerSideProps } from "next";
 
 import { theme } from "./theme";
 
-export const Chakra: React.FC<{ cookies?: string }> = ({
+interface ChakraProps extends React.PropsWithChildren {
+  cookies?: string;
+}
+
+export const Chakra: React.FC<ChakraProps> = ({
   cookies,
   children
 }) => {
