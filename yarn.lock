@@ -3909,7 +3909,7 @@ __metadata:
     eslint: 8.29.0
     eslint-config-next: 13.0.6
     eslint-plugin-simple-import-sort: 8.0.0
-    framer-motion: 7.6.18
+    framer-motion: 7.6.19
     next: 13.0.6
     next-pwa: 5.6.0
     next-seo: 5.15.0
@@ -5047,9 +5047,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:7.6.18":
-  version: 7.6.18
-  resolution: "framer-motion@npm:7.6.18"
+"framer-motion@npm:7.6.19":
+  version: 7.6.19
+  resolution: "framer-motion@npm:7.6.19"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
@@ -5063,7 +5063,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: b09b1d6edfa687fa5ac0c41cd45aab7a9ea83f1b6c4c910faa9b9aa74867da3bab86d09d6aea48fb445562abfda361a98924be2bd39a4b9075a102e8179578cc
+  checksum: bad085f2c7f55736c33723cd343b5e672c34da1c20b2aa7df6f0a5c046862a8b7e12f31884a5cb2d1d78ed755b3079af6a41864160c96b20b0fbf86d9fef8cfb
   languageName: node
   linkType: hard
 
