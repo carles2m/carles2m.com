@@ -12,7 +12,7 @@
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/github/license/carles2m/carles2m.com">
-  <img alt="CodeQL Workflow Status" src="https://img.shields.io/github/workflow/status/carles2m/carles2m.com/CodeQL?label=CodeQL">
+  <img alt="CodeQL Workflow Status" src="https://img.shields.io/github/actions/workflow/status/carles2m/carles2m.com/codeql-analysis.yml?branch=main&label=CodeQL">
   <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/carles2m/carles2m.com/production?label=deployment">
 </p>
 
