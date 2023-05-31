@@ -2375,6 +2375,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/theme-tools@npm:2.0.18":
+  version: 2.0.18
+  resolution: "@chakra-ui/theme-tools@npm:2.0.18"
+  dependencies:
+    "@chakra-ui/anatomy": 2.1.2
+    "@chakra-ui/shared-utils": 2.0.5
+    color2k: ^2.0.0
+  peerDependencies:
+    "@chakra-ui/styled-system": ">=2.0.0"
+  checksum: 47d1c3edd1c5d5a9528d063cdd5d1b78baecbbcd721fdee65088efdbad8b1312031b1ac279f4f77f48f0087494c15b4072d871478c9b7d989b8c31ef01444da5
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/theme-utils@npm:2.0.13":
   version: 2.0.13
   resolution: "@chakra-ui/theme-utils@npm:2.0.13"
@@ -2397,6 +2410,19 @@ __metadata:
   peerDependencies:
     "@chakra-ui/styled-system": ">=2.0.0"
   checksum: 17b80ae5b5e6a81c475f8b86cd66e0104b35094451a36a21fd96c2a8103b3312bdcf862c277147cceed423b9dde5e107982b0a03193fe980be43add050f01175
+  languageName: node
+  linkType: hard
+
+"@chakra-ui/theme@npm:3.1.2":
+  version: 3.1.2
+  resolution: "@chakra-ui/theme@npm:3.1.2"
+  dependencies:
+    "@chakra-ui/anatomy": 2.1.2
+    "@chakra-ui/shared-utils": 2.0.5
+    "@chakra-ui/theme-tools": 2.0.18
+  peerDependencies:
+    "@chakra-ui/styled-system": ">=2.8.0"
+  checksum: cfb0770480a5ec8851baf8648acf536603342b3cd2504261a1842bcd6e075c1a0f6ff360060ff984275fb7ca036e6c8f4c2485b2dd68b735cd388379dd9a1418
   languageName: node
   linkType: hard
 
@@ -3871,7 +3897,7 @@ __metadata:
     "@chakra-ui/react": 2.5.3
     "@chakra-ui/styled-system": 2.6.2
     "@chakra-ui/system": 2.5.3
-    "@chakra-ui/theme": 2.3.0
+    "@chakra-ui/theme": 3.1.2
     "@chakra-ui/theme-tools": 2.0.16
     "@emotion/react": 11.11.0
     "@emotion/styled": 11.11.0
