@@ -43,7 +43,7 @@
     "eslint-plugin-simple-import-sort": "10.0.0",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@3.6.2",
+  "packageManager": "yarn@3.6.3",
   "browserslist": [
     "defaults and supports es6-module",
     "maintained node versions"
