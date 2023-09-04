@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 <p align="center">
-  <img alt="NodeJs dependency version (dev)" src="https://img.shields.io/badge/node-%5E18.12.1-blue">
+  <img alt="NodeJs dependency version (dev)" src="https://img.shields.io/badge/node-LTS-blue">
   <img alt="TypeScript dependency version (dev)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/dev/typescript">
   <img alt="React dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/react">
   <img alt="Next dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next">
@@ -36,35 +36,40 @@
 
 ### Prerequisites
 
-1. LTS version of [Node](https://nodejs.org/).
-2. Yarn
-  ```sh
-  npm install -g yarn
-  ```
+1. Install the LTS version of [Node](https://nodejs.org/).
+1. Install Yarn: `npm install -g yarn`
 
 ### Installation
 
-1. Clone the repo
-  ```sh
-  git clone https://github.com/carles2m/carles2m.com.git
-  ```
-2. Install dependencies
-  ```sh
-  cd carles2m.com
-  yarn
-  ```
+1. Clone the repo:
+```bash
+git clone https://github.com/carles2m/carles2m.com.git
+```
+1. Install dependencies: 
+```bash
+cd carles2m.com
+yarn
+```
 
 ### Deployment
 
-* Development build
-  ```sh
-  yarn dev
-  ```
-* Production build
-  ```sh
-  yarn build
-  yarn start
-  ```
+* Development:
+```bash
+yarn dev
+```
+* Production:
+```bash
+yarn build
+yarn start
+```
+
+<p align="end">(<a href="#top">back to top</a>)</p>
+
+## Using Docker
+
+1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
+1. Build the container: `docker build -t carles2m .`
+1. Run the container: `docker run -p 3000:3000 carles2m`
 
 <p align="end">(<a href="#top">back to top</a>)</p>
 
