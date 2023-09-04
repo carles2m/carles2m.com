@@ -7,5 +7,5 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
-  // other next.js config
+  output: process.env.DOCKER === "1" ? "standalone" : undefined
 });
