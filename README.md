@@ -68,8 +68,14 @@ yarn start
 ## Using Docker
 
 1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
-1. Build the container: `docker build -t carles2m .`
-1. Run the container: `docker run -p 3000:3000 carles2m`
+1. Build the container: `docker build -t carles2m/website .`
+1. Run the container: `docker run -p 3000:3000 carles2m/website`
+
+<p align="end">(<a href="#top">back to top</a>)</p>
+
+## Using Kubernetes
+
+The Kubernetes config file `kubernetes/config.yml` is provided as a sample.
 
 <p align="end">(<a href="#top">back to top</a>)</p>
 
