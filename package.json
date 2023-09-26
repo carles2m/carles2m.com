@@ -31,6 +31,7 @@
     "sharp": "0.32.6"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.8.1",
     "@types/gtag.js": "0.0.14",
     "@types/node": "18.18.0",
     "@types/react": "18.2.23",
