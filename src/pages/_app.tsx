@@ -47,7 +47,6 @@ const MyApp: React.FC<AppProps> = ({
 
           <script
             id="google-analytics"
-            async
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -62,7 +61,7 @@ const MyApp: React.FC<AppProps> = ({
         </Head>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          strategy="afterInteractive"
+          strategy="worker"
         />
         <Component {...pageProps} />
       </Chakra>
