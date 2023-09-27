@@ -41,20 +41,12 @@ export default {
       content: title
     },
     {
-      name: "msapplication-TileColor",
-      content: "#f7fafc"
-    },
-    {
       name: "msapplication-TileImage",
       content: "/icons/mstile-144x144.png"
     },
     {
       name: "msapplication-config",
       content: "/browserconfig.xml"
-    },
-    {
-      name: "theme-color",
-      content: "#f7fafc"
     },
   ],
   additionalLinkTags: [
