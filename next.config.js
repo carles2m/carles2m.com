@@ -8,7 +8,4 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
   output: process.env.DOCKER === "1" ? "standalone" : undefined,
-  experimental: {
-    nextScriptWorkers: true,
-  }
 });
