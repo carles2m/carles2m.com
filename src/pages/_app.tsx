@@ -1,3 +1,4 @@
+import { Partytown } from "@builder.io/partytown/react";
 import {
   createStandaloneToast,
   Link as ChakraLink,
@@ -12,7 +13,7 @@ import React from "react";
 import SEO from "../../next-seo.config";
 import { Chakra } from "../components/Chakra";
 import { profileName } from "../lib/content";
-import { GA_TRACKING_ID, GA_TRACKING_ID_2 } from "../lib/gtag";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 const { ToastContainer, toast } = createStandaloneToast();
 const pwaToastId = "pwa-toast";
@@ -45,24 +46,25 @@ const MyApp: React.FC<AppProps> = ({
           <title>{profileName}</title>
           <meta name="viewport" content="initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
 
+          <Partytown debug={false} forward={["dataLayer.push", "gtag"]} />
           <script
             id="google-analytics"
+            type="text/partytown"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
-                gtag('js', new Date());
-      
-                gtag('config', '${GA_TRACKING_ID}');
-                gtag('config', '${GA_TRACKING_ID_2}');
+                window.gtag = function(){window.dataLayer.push(arguments);};
+                window.gtag('js', new Date());
+                window.gtag('config', '${GA_TRACKING_ID}');
               `
             }}
           />
         </Head>
         <Script
+          type="text/partytown"
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          strategy="worker"
         />
+
         <Component {...pageProps} />
       </Chakra>
     </>
