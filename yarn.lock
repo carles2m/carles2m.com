@@ -3065,10 +3065,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/gtag.js@npm:0.0.14":
-  version: 0.0.14
-  resolution: "@types/gtag.js@npm:0.0.14"
-  checksum: fb269d2da04f83999502683f3f80a9245b7f0a7f71a76d6404649c3214130505d2c93fa27858b400ea94484cba50a0d1494dbce4fbcf1215f0800af5b04d7fe7
+"@types/gtag.js@npm:0.0.16":
+  version: 0.0.16
+  resolution: "@types/gtag.js@npm:0.0.16"
+  checksum: 90922019d2f2eeda50a8d65456f87c3307e12a1b56c19278c943b337fbe8ebce0c3ba7d3e2a71e08851647b3c28e35785cf8d2d274688bee0d579bc85d7ac77f
   languageName: node
   linkType: hard
 
@@ -3944,7 +3944,7 @@ __metadata:
     "@chakra-ui/theme-tools": 2.1.0
     "@emotion/react": 11.11.1
     "@emotion/styled": 11.11.0
-    "@types/gtag.js": 0.0.14
+    "@types/gtag.js": 0.0.16
     "@types/node": 18.18.3
     "@types/react": 18.2.24
     "@types/react-dom": 18.2.8
