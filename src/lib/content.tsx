@@ -1,7 +1,4 @@
-import {
-  LinkProps,
-  Text,
-} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -23,9 +20,6 @@ import { Project, SocialLink } from "./content-types";
 export const profileName = "Carles Moreno";
 export const profilePicture = profile;
 export const profileDescription = <>I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am a <Text as="span" display="inline-block">gamer 🎮</Text> passionate about building websites that can be used by everyone.</>;
-
-export const headerLinks: readonly LinkProps[] = [
-] as const;
 
 export const professionalProjects: { [key: string]: Project } = {
   m365Growth: {
