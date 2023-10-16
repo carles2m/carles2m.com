@@ -49,7 +49,7 @@ const Index: NextPage = () => {
         bg={useColorModeValue("gray.50", "gray.900")}
         color={useColorModeValue("black", "white")}
       >
-        <Header profileName={profileName} profilePicture={profilePicture} />
+        <Header profileName={profileName} profilePicture={profilePicture} links={socialLinks} />
         <Main>
           <Heading as="h1" size="2xl" pt="2rem">
             {day &&
@@ -84,7 +84,7 @@ const Index: NextPage = () => {
           />
         </Main>
 
-        <Footer profileName={profileName} links={socialLinks} />
+        <Footer profileName={profileName} />
       </Flex>
     </>
   );
