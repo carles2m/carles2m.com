@@ -43,7 +43,7 @@
     "eslint": "8.56.0",
     "eslint-config-next": "13.4.19",
     "eslint-plugin-simple-import-sort": "10.0.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.3"
   },
   "packageManager": "yarn@3.6.4",
   "browserslist": [
