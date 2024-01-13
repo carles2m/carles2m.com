@@ -5199,7 +5199,7 @@ __metadata:
     jsx-ast-utils: ^2.0.1
     prop-types: ^15.6.2
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
   checksum: 85ac429c2bc66a1a03e45ab4500bde1f45610f8fda06a1af4e55125511babfe7aeeca2fd7ffbe1fea9b2ef5c1f9c8d328cca376e396958a008f57f1d03d28506
   languageName: node
   linkType: hard
