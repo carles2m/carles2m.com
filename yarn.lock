@@ -1519,12 +1519,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/partytown@npm:0.8.2":
-  version: 0.8.2
-  resolution: "@builder.io/partytown@npm:0.8.2"
+"@builder.io/partytown@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@builder.io/partytown@npm:0.9.0"
   bin:
     partytown: bin/partytown.cjs
-  checksum: ef52c7c05cf591017374d7624a3f110d083b8df0b20042dffd410934777842122821f94ea9ffb1556e1fc9b383c8b690a090003f271e1bee23541385ab29340a
+  checksum: 0d694b893dfc5298a8203db0b948c44d85c0bf47c97de5389918234aa40747668b50112706c6708c1f6870ca909ceb6864afca7c0538cf10a9a049b0bef2d79b
   languageName: node
   linkType: hard
 
@@ -4754,7 +4754,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "carles2m@workspace:."
   dependencies:
-    "@builder.io/partytown": 0.8.2
+    "@builder.io/partytown": 0.9.0
     "@chakra-ui/icons": 2.1.0
     "@chakra-ui/react": 2.8.0
     "@chakra-ui/styled-system": 2.9.1
