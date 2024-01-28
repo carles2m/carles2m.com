@@ -25,7 +25,7 @@
 # [carles2m.com](https://carles2m.com)
 
 <p align="center">
-  <img alt="carles2m.com" src="https://image.thum.io/get/https://carles2m.com">
+  <img alt="carles2m.com" src="https://image.thum.io/get/maxAge/24/https://carles2m.com/">
 </p>
 
 <p align="end">(<a href="#top">back to top</a>)</p>
