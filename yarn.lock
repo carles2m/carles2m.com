@@ -4780,7 +4780,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-icons: 5.0.1
-    react-intersection-observer: 9.5.3
+    react-intersection-observer: 9.5.4
     sharp: 0.33.2
     typescript: 5.3.3
   languageName: unknown
@@ -8280,12 +8280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intersection-observer@npm:9.5.3":
-  version: 9.5.3
-  resolution: "react-intersection-observer@npm:9.5.3"
+"react-intersection-observer@npm:9.5.4":
+  version: 9.5.4
+  resolution: "react-intersection-observer@npm:9.5.4"
   peerDependencies:
     react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 2281912a9fe7a52bb1237c1b5299873beee358f79325eb9ba80fc0e4b7640963c1b27528f873453746e93981c503f880fdea9f786ebeae2e6a4216b50d180941
+  checksum: 6936ecfab8bc35e63dfd0b5d5a36fe9ff6cff7caa4bfffd8d9bedf362580c2027e81375906c509f8461842942e4055110ff7e7ae23c1e256b88fc7c7951c6eac
   languageName: node
   linkType: hard
 
