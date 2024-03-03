@@ -4,6 +4,8 @@ import {
   Link as ChakraLink,
   Text,
 } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
@@ -60,12 +62,15 @@ const MyApp: React.FC<AppProps> = ({
             }}
           />
         </Head>
+
+        <Component {...pageProps} />
+
+        <SpeedInsights />
+        <Analytics />
         <Script
           type="text/partytown"
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
-
-        <Component {...pageProps} />
       </Chakra>
     </>
   );
