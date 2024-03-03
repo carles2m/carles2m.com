@@ -7,10 +7,9 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
-    "build": "npm run partytown && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "partytown": "partytown copylib public/~partytown"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/icons": "2.1.0",
@@ -34,8 +33,6 @@
     "sharp": "0.33.2"
   },
   "devDependencies": {
-    "@builder.io/partytown": "0.10.0",
-    "@types/gtag.js": "0.0.19",
     "@types/node": "20.11.24",
     "@types/react": "18.2.61",
     "@types/react-dom": "18.2.19",

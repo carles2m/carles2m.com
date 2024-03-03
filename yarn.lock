@@ -1519,15 +1519,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/partytown@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@builder.io/partytown@npm:0.10.0"
-  bin:
-    partytown: bin/partytown.cjs
-  checksum: e168a25b0b82d2e0bffda65feb2377b9681b7393229e5dbf266ac48acbbe61d83a7515dce1fc59fce8c67729366996f79b36f6f221691ba3364f04e7cbb88d26
-  languageName: node
-  linkType: hard
-
 "@chakra-ui/accordion@npm:2.3.0":
   version: 2.3.0
   resolution: "@chakra-ui/accordion@npm:2.3.0"
@@ -3595,13 +3586,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/gtag.js@npm:0.0.19":
-  version: 0.0.19
-  resolution: "@types/gtag.js@npm:0.0.19"
-  checksum: 7ecd5ae645a33f02ca886f2ba0419b20c95358b80ef389a2dc42e80fbf850e92139e868f18d04285f93cdadbf6cb8861a64a7e77cc42eb6b8c84d3e812604192
-  languageName: node
-  linkType: hard
-
 "@types/json-schema@npm:*":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -4832,7 +4816,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "carles2m@workspace:."
   dependencies:
-    "@builder.io/partytown": 0.10.0
     "@chakra-ui/icons": 2.1.0
     "@chakra-ui/react": 2.8.0
     "@chakra-ui/styled-system": 2.9.1
@@ -4841,7 +4824,6 @@ __metadata:
     "@chakra-ui/theme-tools": 2.1.0
     "@emotion/react": 11.11.4
     "@emotion/styled": 11.11.0
-    "@types/gtag.js": 0.0.19
     "@types/node": 20.11.24
     "@types/react": 18.2.61
     "@types/react-dom": 18.2.19
