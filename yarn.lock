@@ -3921,7 +3921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.2.2":
+"@vercel/analytics@npm:1.2.2":
   version: 1.2.2
   resolution: "@vercel/analytics@npm:1.2.2"
   dependencies:
@@ -3938,7 +3938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/speed-insights@npm:^1.0.10":
+"@vercel/speed-insights@npm:1.0.10":
   version: 1.0.10
   resolution: "@vercel/speed-insights@npm:1.0.10"
   peerDependencies:
@@ -4829,8 +4829,8 @@ __metadata:
     "@types/react-dom": 18.2.19
     "@typescript-eslint/eslint-plugin": 7.1.0
     "@typescript-eslint/parser": 7.1.0
-    "@vercel/analytics": ^1.2.2
-    "@vercel/speed-insights": ^1.0.10
+    "@vercel/analytics": 1.2.2
+    "@vercel/speed-insights": 1.0.10
     cross-env: 7.0.3
     eslint: 8.57.0
     eslint-config-next: 14.1.1
