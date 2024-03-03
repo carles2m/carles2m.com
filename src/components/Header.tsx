@@ -18,7 +18,6 @@ import { StaticImageData } from "next/image";
 import React from "react";
 
 import { SocialLink } from "../lib/content-types";
-import { reportClick } from "../lib/gtag";
 import { ChakraNextImage } from "./ChakraNextImage";
 
 interface HeaderProps {
@@ -106,7 +105,6 @@ const HeaderButton: React.FC<SocialLink | IconButtonProps> = ({ ...props }) => {
     buttonProps = {
       as: Link,
       "aria-label": props.name,
-      onClick: () => reportClick(props.href),
       icon: <props.icon />,
     };
 
