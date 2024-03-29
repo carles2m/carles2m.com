@@ -19,7 +19,7 @@ import { Project, SocialLink } from "./content-types";
 
 export const profileName = "Carles Moreno";
 export const profilePicture = profile;
-export const profileDescription = <>I&apos;m a Software Engineer Manager at <ChakraNextLink isExternal href="https://www.microsoft.com">Microsoft</ChakraNextLink>. I am a <Text as="span" display="inline-block">gamer 🎮</Text> passionate about building websites that can be used by everyone.</>;
+export const profileDescription = <>I&apos;m a <Text as="span" display="inline-block">Software Engineer</Text> passionate about building websites that can be used by everyone and a <Text as="span" display="inline-block">gamer 🎮</Text></>;
 
 export const professionalProjects: { [key: string]: Project } = {
   m365Growth: {
