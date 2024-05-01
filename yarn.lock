@@ -4830,7 +4830,7 @@ __metadata:
     next-seo: 6.5.0
     react: 18.3.1
     react-dom: 18.3.1
-    react-icons: 5.1.0
+    react-icons: 5.2.0
     react-intersection-observer: 9.10.1
     sharp: 0.33.3
     typescript: 5.4.5
@@ -8557,12 +8557,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:5.1.0":
-  version: 5.1.0
-  resolution: "react-icons@npm:5.1.0"
+"react-icons@npm:5.2.0":
+  version: 5.2.0
+  resolution: "react-icons@npm:5.2.0"
   peerDependencies:
     react: "*"
-  checksum: 0ea6cfed7f2a98d58b3514a080a9d5451ab81fdf94fb0c94d2add0d22b754a38f4eb4cb4e8ce8c0685c0bfca2394ec0101391530a4a90f233256bd7a13f73111
+  checksum: bb5201994f3db55bbf187d4885ae6ff549254b3d67a0b90d4bc8b71bfb35a1a6e1a02e60fb8b8bd50027014fdd7dc272b88bb29c83446688bd2692256758f9bc
   languageName: node
   linkType: hard
 
