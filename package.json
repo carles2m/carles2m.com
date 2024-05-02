@@ -44,7 +44,7 @@
     "eslint-plugin-simple-import-sort": "12.1.0",
     "typescript": "5.4.5"
   },
-  "packageManager": "yarn@3.8.1",
+  "packageManager": "yarn@3.8.2",
   "browserslist": [
     "defaults and supports es6-module",
     "maintained node versions"
