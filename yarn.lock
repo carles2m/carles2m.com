@@ -4831,7 +4831,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-icons: 5.2.0
-    react-intersection-observer: 9.10.1
+    react-intersection-observer: 9.10.2
     sharp: 0.33.3
     typescript: 5.4.5
   languageName: unknown
@@ -8566,16 +8566,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intersection-observer@npm:9.10.1":
-  version: 9.10.1
-  resolution: "react-intersection-observer@npm:9.10.1"
+"react-intersection-observer@npm:9.10.2":
+  version: 9.10.2
+  resolution: "react-intersection-observer@npm:9.10.2"
   peerDependencies:
     react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: f37585a810f4988e73de939ab8f533494a43919f271bf1f827f1f315f3b2a3617d7d63b52b501d4089d2e97604c789685d1e20de7ca426f51ceb4ef5e8ab7172
+  checksum: fea1104ae5515f01b6c13f8f8259bf04e44fc624e8ff5aecb1b24cca25cc04b62f7551586acd838a2c475d55fb07d9c042a412f90cd4c8e39ff4575d5a5a76ac
   languageName: node
   linkType: hard
 
