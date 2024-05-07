@@ -4824,7 +4824,7 @@ __metadata:
     eslint: 9.2.0
     eslint-config-next: 14.2.3
     eslint-plugin-simple-import-sort: 12.1.0
-    framer-motion: 11.1.8
+    framer-motion: 11.1.9
     next: 14.2.3
     next-pwa: 5.6.0
     next-seo: 6.5.0
@@ -6192,9 +6192,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:11.1.8":
-  version: 11.1.8
-  resolution: "framer-motion@npm:11.1.8"
+"framer-motion@npm:11.1.9":
+  version: 11.1.9
+  resolution: "framer-motion@npm:11.1.9"
   dependencies:
     tslib: ^2.4.0
   peerDependencies:
@@ -6208,7 +6208,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: a6b5a0d8532bd01e496d71c9dbd5eb4f8697ca7a49731507d79a59033ef67737bb516c152b2ab881df0e2c2194fd75e79c15e1f31a82e48a51b764eb3dea8f77
+  checksum: a7dcd8bfa1780fe8364c7e039a6e37d94edcdec6ee618355d649aab99451cb666ee4c2b5b8b5d2bcd1ccdba44fbb2cdd57deed9325c503d544d3f9a34fdfce27
   languageName: node
   linkType: hard
 
