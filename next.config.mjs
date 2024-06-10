@@ -7,6 +7,8 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
+    connect-src 'self' vercel.live;
+    frame-src 'self' vercel.live;
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;
