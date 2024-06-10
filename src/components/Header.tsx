@@ -1,128 +1,51 @@
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton,
-  IconButtonProps,
-  Link,
-  LinkProps,
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-  Tooltip,
-  useColorMode
-} from "@chakra-ui/react";
 import { StaticImageData } from "next/image";
+import { useTheme } from "next-themes";
 import React from "react";
+import { BsMoon, BsSun } from "react-icons/bs";
 
 import { SocialLink } from "../lib/content-types";
-import { ChakraNextImage } from "./ChakraNextImage";
+import { HeaderButton } from "./HeaderButton";
+import { HeaderImage } from "./HeaderImage";
 
-interface HeaderProps {
-  profileName: string,
-  profilePicture: StaticImageData,
-  links: { [key: string]: SocialLink }
-}
+export type HeaderProps = {
+  profileName: string;
+  profilePicture: StaticImageData;
+  links: { [key: string]: SocialLink };
+};
 
 export const Header: React.FC<HeaderProps> = ({
   profileName,
   profilePicture,
-  links
+  links,
 }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <Box
-      as="header"
-      top={0}
-      position="sticky"
-      zIndex="sticky"
-      backdropFilter="saturate(180%) blur(20px) contrast(90%)"
-      w="full"
-      boxShadow="2xl"
-    >
-      <Box
-        w="full"
-      >
-        <Box
-          maxW="6xl"
-          ml="auto"
-          mr="auto"
-          px={4}
-        >
-          <Flex h={16} alignItems="center" justifyContent="space-between">
-            <Box display={{ md: "none" }} />
+    <header className="sticky top-0 z-10 w-full shadow-2xl backdrop-blur-[20px] backdrop-contrast-[90%] backdrop-saturate-[180%]">
+      <div className="mx-auto max-w-content px-content">
+        <div className="mt-[env(titlebar-area-height,0)] flex h-16 items-center justify-between">
+          <div className="md:hidden" />
 
-            <HStack spacing={8} alignItems="center">
-              <Box>
-                <Popover trigger="hover" isLazy>
-                  <PopoverTrigger>
-                    <Flex alignItems="center">
-                      <ChakraNextImage
-                        borderRadius="full"
-                        src={profilePicture}
-                        alt={profileName}
-                        boxSize="48px"
-                        placeholder="blur"
-                      />
-                    </Flex>
-                  </PopoverTrigger>
-                  <PopoverContent>
-                    <PopoverArrow />
-                    <ChakraNextImage
-                      src={profilePicture}
-                      alt={profileName}
-                    />
-                  </PopoverContent>
-                </Popover>
-              </Box>
-            </HStack>
+          <HeaderImage
+            profileName={profileName}
+            profilePicture={profilePicture}
+          />
 
-            <HStack spacing={4}>
-              {Object.values(links).map((link) => (
-                <HeaderButton key={link.name} {...link} />
-              ))}
-              <HeaderButton
-                aria-label="Toggle color mode"
-                onClick={toggleColorMode}
-                icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              />
-            </HStack>
-          </Flex>
-        </Box>
-      </Box>
-    </Box>
-  );
-};
+          <div className="flex flex-row gap-4">
+            {Object.values(links).map((link) => (
+              <HeaderButton key={link.name} {...link} isExternal />
+            ))}
 
-
-const HeaderButton: React.FC<SocialLink | IconButtonProps> = ({ ...props }) => {
-  let buttonProps: IconButtonProps;
-
-  if ("href" in props) {
-    buttonProps = {
-      as: Link,
-      "aria-label": props.name,
-      icon: <props.icon />,
-    };
-
-    const linkProps = (buttonProps as unknown as LinkProps);
-    linkProps.href = props.href;
-    linkProps.isExternal = true;
-  }
-  else {
-    buttonProps = props;
-  }
-
-  return (
-    <Tooltip label={buttonProps["aria-label"]}>
-      <IconButton
-        {...buttonProps}
-        bg="unset"
-        transition="background 0.3s ease"
-      />
-    </Tooltip>
+            <HeaderButton
+              name="Toggle color mode"
+              Icon={resolvedTheme == "dark" ? BsSun : BsMoon}
+              onClick={() =>
+                setTheme(resolvedTheme == "dark" ? "light" : "dark")
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
