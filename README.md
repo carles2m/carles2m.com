@@ -23,7 +23,9 @@
 # [carles2m.com](https://carles2m.com)
 
 <p align="center">
-  <img alt="carles2m.com" src="https://image.thum.io/get/maxAge/24/https://carles2m.com/">
+  <a href="https://carles2m.com">
+    <img alt="carles2m.com" src="public/form_factor-wide.webp">
+  </a>
 </p>
 
 <p align="end">(<a href="#top">back to top</a>)</p>
@@ -84,4 +86,3 @@ The Kubernetes config file `kubernetes/config.yml` is provided as a sample.
 * [Vercel](https://vercel.com/)
 * [Laura Beatris's Site](https://github.com/LauraBeatris/laurabeatris.com)
 * [Img Shields](https://shields.io)
-* [Screenshot Generator](https://www.thum.io/)
