@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hyperlink {
+    @apply text-blue-800 underline dark:text-blue-300 underline-offset-2;
+  }
+}

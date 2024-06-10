@@ -1,109 +1,38 @@
-import {
-  Badge,
-  Box,
-  Center,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-  usePrefersReducedMotion,
-  VStack,
-} from "@chakra-ui/react";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 
-import { scaleInCenter } from "../lib/animations";
 import { Project } from "../lib/content-types";
-import { ChakraNextImage } from "./ChakraNextImage";
+import { ProjectCardBadges } from "./ProjectCardBadges";
+import { ProjectCardImage } from "./ProjectCardImage";
 
-export const cardImageBoxSize = 320;
+export type ProjectCardProps = {
+  index: number;
+  project: Project;
+};
 
-interface ProjectCardProps {
-  project: Project
-}
-
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  project
-}) => {
-  const image = useColorModeValue(project.image, project.imageDark ?? project.image);
-
-  const prefersReducedMotion = usePrefersReducedMotion();
+export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project }) => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
-    fallbackInView: true
+    fallbackInView: true,
   });
 
-  const imageElement = typeof image === "string"
-    ? (
-      <Center
-        height={cardImageBoxSize}
-        width={cardImageBoxSize}
-        fontSize="9xl"
-      >
-        {image}
-      </Center>
-    )
-    : (
-      <ChakraNextImage
-        roundedTop="lg"
-        boxSize={`${cardImageBoxSize - 2}px`}
-        src={image}
-        alt=""
-        placeholder="blur"
-      />
-    );
-
   return (
-    <Center
+    <div
       ref={ref}
+      className={`${inView ? "animate-boom motion-reduce:animate-none" : "invisible motion-reduce:visible"} relative flex max-w-80 flex-col justify-between rounded-lg border border-gray-200 bg-white shadow-lg dark:border-white/15 dark:bg-gray-800`}
     >
-      <Box
-        bg={useColorModeValue("white", "gray.800")}
-        maxW="xs"
-        borderWidth="1px"
-        rounded="lg"
-        shadow="lg"
-        position="relative"
-        visibility={inView || prefersReducedMotion ? "visible" : "hidden"}
-        css={inView && !prefersReducedMotion ? scaleInCenter : undefined}
-      >
-        {imageElement}
+      <ProjectCardImage index={index} project={project} />
 
-        <VStack p={6} pt={3} spacing={4}>
-          <Heading fontSize="2xl" fontFamily="body" as="h3">
-            {project.name}
-          </Heading>
+      <div className="flex h-full flex-col justify-between gap-4 px-6 py-3 text-center">
+        <h3 className="text-2xl font-bold">{project.name}</h3>
 
-          <Text
-            textAlign="center"
-            color={useColorModeValue("gray.700", "gray.400")}
-            px={3}
-          >
-            {project.content}
-          </Text>
+        <span className="text-balance px-1 text-gray-700 dark:text-gray-400">
+          {project.content}
+        </span>
 
-          <Stack
-            align="center"
-            justify="center"
-            direction="row"
-            mt={6}
-            as="ul"
-          >
-            {project.tags.map(tag => (
-              <Badge
-                as="li"
-                key={tag}
-                px={2}
-                py={1}
-                fontWeight="normal"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </Stack>
-        </VStack>
-      </Box>
-    </Center>
+        <ProjectCardBadges project={project} />
+      </div>
+    </div>
   );
 };

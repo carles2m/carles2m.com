@@ -4,23 +4,17 @@ FROM node:lts-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
-
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
-
 WORKDIR /app
 
 # Install dependencies
-COPY package.json yarn.lock* .yarnrc.yml ./
-COPY .yarn/releases ./.yarn/releases
-RUN corepack enable \
-  && corepack prepare yarn@stable --activate \
-  && yarn --frozen-lockfile
+COPY package.json package-lock.json* ./
+RUN npm ci
 
 
 # Rebuild the source code only when needed
 FROM base AS builder
-
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -30,12 +24,11 @@ ENV DOCKER 1
 # Comment the following line in case you want to enable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN yarn build
+RUN npm run build
 
 
 # Production image, copy all the files and run next
 FROM base AS runner
-
 WORKDIR /app
 
 ENV DOCKER 1
@@ -62,7 +55,7 @@ USER nextjs
 EXPOSE 3000
 
 ENV PORT 3000
-# set hostname to localhost
-ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]
+# server.js is created by next build from the standalone output
+# https://nextjs.org/docs/pages/api-reference/next-config-js/output
+CMD HOSTNAME="0.0.0.0" node server.js

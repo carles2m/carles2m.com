@@ -1,13 +1,11 @@
 <div id="top"></div>
 
 <p align="center">
-  <img alt="NodeJs dependency version (dev)" src="https://img.shields.io/badge/node-LTS-blue">
-  <img alt="TypeScript dependency version (dev)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/dev/typescript">
   <img alt="React dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/react">
   <img alt="Next dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next">
-  <img alt="Next-PWA dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next-pwa">
-  <img alt="Next-SEO dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/next-seo">
-  <img alt="Chakra UI dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/@chakra-ui/react">
+  <img alt="TypeScript dependency version (dev)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/dev/typescript">
+  <img alt="Tailwind CSS dependency version (dev)" src="https://img.shields.io/github/package-json/dependency-version/carles2m/carles2m.com/dev/tailwindcss">
+  <img alt="NodeJs dependency version (dev)" src="https://img.shields.io/badge/node-LTS-blue">
 </p>
 
 <p align="center">
@@ -37,7 +35,6 @@
 ### Prerequisites
 
 1. Install the LTS version of [Node](https://nodejs.org/).
-1. Install Yarn: `npm install -g yarn`
 
 ### Installation
 
@@ -48,19 +45,19 @@ git clone https://github.com/carles2m/carles2m.com.git
 1. Install dependencies: 
 ```bash
 cd carles2m.com
-yarn
+npm i
 ```
 
 ### Deployment
 
 * Development:
 ```bash
-yarn dev
+npm run dev
 ```
 * Production:
 ```bash
-yarn build
-yarn start
+npm run build
+npm run start
 ```
 
 <p align="end">(<a href="#top">back to top</a>)</p>
@@ -83,12 +80,8 @@ The Kubernetes config file `kubernetes/config.yml` is provided as a sample.
 
 * [Shandy Sulen](https://www.linkedin.com/in/shandysulen) and [PopRank](https://poprank.io).
 * [Next.js](https://nextjs.org)
-* [Chakra UI](https://chakra-ui.com)
+* [Tailwind CSS](https://tailwindcss.com/)
 * [Vercel](https://vercel.com/)
-* [Chakra Templates](https://chakra-templates.dev/)
-* [Awesome Chakra UI](https://github.com/chakra-ui/awesome-chakra-ui)
 * [Laura Beatris's Site](https://github.com/LauraBeatris/laurabeatris.com)
-* [Next PWA](https://github.com/shadowwalker/next-pwa)
-* [Next SEO](https://github.com/garmeeh/next-seo)
 * [Img Shields](https://shields.io)
 * [Screenshot Generator](https://www.thum.io/)
