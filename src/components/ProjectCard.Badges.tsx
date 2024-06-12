@@ -1,13 +1,13 @@
 import React from "react";
 
-import { ProjectCardProps } from "./ProjectCard";
+import { Project } from "../lib/content.types";
 
-type ProjectCardBadgesProps = Pick<ProjectCardProps, "project">;
+type ProjectCardBadgesProps = Pick<Project, "tags">;
 
-export const ProjectCardBadges = ({ project }: ProjectCardBadgesProps) => {
+export const ProjectCardBadges = ({ tags }: ProjectCardBadgesProps) => {
   return (
     <ul className="mb-2 mt-4 flex flex-row items-center justify-center gap-2">
-      {project.tags.map((tag) => (
+      {tags.map((tag) => (
         <Badge key={tag}>{tag}</Badge>
       ))}
     </ul>

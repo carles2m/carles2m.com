@@ -80,7 +80,7 @@ The Kubernetes config file `kubernetes/config.yml` is provided as a sample.
 
 ## Acknowledgments
 
-* [Shandy Sulen](https://www.linkedin.com/in/shandysulen) and [PopRank](https://poprank.io).
+* [Shandy Sulen](https://www.linkedin.com/in/shandysulen).
 * [Next.js](https://nextjs.org)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Vercel](https://vercel.com/)

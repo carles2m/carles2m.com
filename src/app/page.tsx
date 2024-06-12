@@ -17,16 +17,23 @@ import { getWeekDay, minuteInMs } from "../lib/dateUtil";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [day, setDay] = useState<string>();
 
   // useEffect only runs on the client, using it to determine whether we are ready to show the content
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    setDay(getWeekDay());
+  return (
+    <div className="flex min-h-screen min-w-content flex-col items-center justify-start bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
+      {mounted ? <HomeContent /> : <></>}
+    </div>
+  );
+}
 
+const HomeContent = ({}) => {
+  const [day, setDay] = useState<string>(getWeekDay());
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setDay(getWeekDay());
     }, minuteInMs);
@@ -34,7 +41,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const content = mounted ? (
+  return (
     <>
       <Header
         profileName={profileName}
@@ -72,13 +79,5 @@ export default function Home() {
 
       <Footer profileName={profileName} />
     </>
-  ) : (
-    <></>
   );
-
-  return (
-    <div className="flex min-h-screen min-w-content flex-col items-center justify-start bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
-      {content}
-    </div>
-  );
-}
+};

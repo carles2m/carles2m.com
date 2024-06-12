@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { ImageProps } from "next/image";
 import React from "react";
 import { IconType } from "react-icons";
 
@@ -11,8 +11,8 @@ export type SocialLink = {
 export type Project = {
   year: number;
   name: string;
-  image: StaticImageData | string;
-  imageDark?: StaticImageData;
+  image: ImageProps["src"];
+  imageDark?: ImageProps["src"];
   content: string | React.ReactElement;
   tags: readonly string[];
 }
