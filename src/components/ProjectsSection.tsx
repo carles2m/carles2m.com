@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Project } from "../lib/content-types";
+import { Project } from "../lib/content.types";
 import { ProjectCard } from "./ProjectCard";
 
 type ProjectsSectionProps = {

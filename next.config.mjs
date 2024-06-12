@@ -1,6 +1,6 @@
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' vercel.live ${process.env.NODE_ENV === "development" ? "va.vercel-scripts.com" : ""};
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
     font-src 'self';

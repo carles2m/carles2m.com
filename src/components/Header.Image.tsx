@@ -1,13 +1,14 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import React from "react";
 
-import { HeaderProps } from "./Header";
-
-type HeaderImageProps = Pick<HeaderProps, "profileName" | "profilePicture">;
+export type HeaderImageProps = {
+  profileName: string;
+  profilePicture: ImageProps["src"];
+};
 
 export const HeaderImage = ({
-  profilePicture,
   profileName,
+  profilePicture,
 }: HeaderImageProps) => {
   const popoverContent = (
     <Image

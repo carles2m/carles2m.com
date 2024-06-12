@@ -13,7 +13,7 @@ import officeLogoDark from "../../public/projects/officelogo-dark.webp";
 import officeLogoLight from "../../public/projects/officelogo-light.webp";
 import xbox from "../../public/projects/xbox.webp";
 import { Link } from "../components/Link";
-import { Project, SocialLink } from "./content-types";
+import { Project, SocialLink } from "./content.types";
 
 export const firstName = "Carles";
 export const lastName = "Moreno";
@@ -179,7 +179,7 @@ export const personalProjects: { [key: string]: Project } = {
         >
           Seattle Catalan association
         </Link>
-        , promoting the culture and Catalan language
+        , promoting the Catalan culture and language
       </span>
     ),
     tags: ["Hugo", "Google Firebase", "Mailchimp"],

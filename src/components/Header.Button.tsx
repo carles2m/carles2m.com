@@ -1,13 +1,13 @@
 import React from "react";
 
-import { SocialLink } from "../lib/content-types";
+import { SocialLink } from "../lib/content.types";
 import { Link, LinkProps } from "./Link";
 
 type ButtonOnlyProps = Omit<SocialLink, "href"> & {
   onClick: () => void;
 };
 
-type HeaderButtonProps =
+export type HeaderButtonProps =
   | (SocialLink & Pick<LinkProps, "isExternal">)
   | ButtonOnlyProps;
 

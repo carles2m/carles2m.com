@@ -1,15 +1,12 @@
-import { StaticImageData } from "next/image";
 import { useTheme } from "next-themes";
 import React from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
-import { SocialLink } from "../lib/content-types";
-import { HeaderButton } from "./HeaderButton";
-import { HeaderImage } from "./HeaderImage";
+import { SocialLink } from "../lib/content.types";
+import { HeaderButton } from "./Header.Button";
+import { HeaderImage, HeaderImageProps } from "./Header.Image";
 
-export type HeaderProps = {
-  profileName: string;
-  profilePicture: StaticImageData;
+export type HeaderProps = HeaderImageProps & {
   links: { [key: string]: SocialLink };
 };
 
