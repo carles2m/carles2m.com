@@ -41,10 +41,13 @@
 ### Installation
 
 1. Clone the repo:
+
 ```bash
 git clone https://github.com/carles2m/carles2m.com.git
 ```
-1. Install dependencies: 
+
+1. Install dependencies:
+
 ```bash
 cd carles2m.com
 npm i
@@ -52,15 +55,24 @@ npm i
 
 ### Deployment
 
-* Development:
+- Development:
+
 ```bash
 npm run dev
 ```
-* Production:
+
+- Production:
+
 ```bash
 npm run build
 npm run start
 ```
+
+<p align="end">(<a href="#top">back to top</a>)</p>
+
+## Customization
+
+You can customize my website with your own content by editing the [content.tsx](/src/lib/content.tsx) file.
 
 <p align="end">(<a href="#top">back to top</a>)</p>
 
@@ -80,9 +92,9 @@ The Kubernetes config file `kubernetes/config.yml` is provided as a sample.
 
 ## Acknowledgments
 
-* [Shandy Sulen](https://www.linkedin.com/in/shandysulen).
-* [Next.js](https://nextjs.org)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Vercel](https://vercel.com/)
-* [Laura Beatris's Site](https://github.com/LauraBeatris/laurabeatris.com)
-* [Img Shields](https://shields.io)
+- [Shandy Sulen](https://www.linkedin.com/in/shandysulen).
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
+- [Laura Beatris's Site](https://github.com/LauraBeatris/laurabeatris.com)
+- [Img Shields](https://shields.io)
