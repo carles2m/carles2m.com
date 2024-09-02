@@ -24,7 +24,7 @@ export const ProjectCardImage = ({
   }
 
   const resolvedImage =
-    resolvedTheme == "light" ? "image" : imageDark ? "imageDark" : "image";
+    resolvedTheme == "dark" ? (imageDark ? "imageDark" : "image") : "image";
 
   // have both images in the DOM at all times to avoid the browser re-fetch the other image when changing themes
   return (

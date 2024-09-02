@@ -27,7 +27,7 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
 
   const content = (
     <>
-      {Icon ? <Icon /> : <div className="size-4"></div>}
+      {Icon ? <Icon size="1.2em" /> : <div className="size-4"></div>}
       {tooltip}
     </>
   );

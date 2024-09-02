@@ -1,5 +1,11 @@
 import React from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import {
+  PiGithubLogo,
+  PiLinkedinLogo,
+  PiLinktreeLogo,
+  PiMoon,
+  PiSun,
+} from "react-icons/pi"; // use all icons from the same set to have a uniform size
 
 import profile from "../../public/profile.webp";
 import advanced21 from "../../public/projects/21.webp";
@@ -7,6 +13,7 @@ import bus from "../../public/projects/bus.webp";
 import casal from "../../public/projects/casal.webp";
 import excel from "../../public/projects/excel.webp";
 import family from "../../public/projects/family.webp";
+import linktree from "../../public/projects/linktree.webp";
 import microsoft365Logo from "../../public/projects/microsoft365logo.webp";
 import microsoftAccount from "../../public/projects/microsoftaccount.webp";
 import officeLogoDark from "../../public/projects/officelogo-dark.webp";
@@ -14,6 +21,8 @@ import officeLogoLight from "../../public/projects/officelogo-light.webp";
 import xbox from "../../public/projects/xbox.webp";
 import { Link } from "../components/Link";
 import { Project, SocialLink } from "./content.types";
+
+export { PiMoon, PiSun };
 
 export const firstName = "Carles";
 export const lastName = "Moreno";
@@ -34,6 +43,14 @@ export const description = `${profileName}'s personal site, where his projects, 
 export const url = "https://carles2m.com";
 
 export const professionalProjects: { [key: string]: Project } = {
+  linktree: {
+    year: 2023,
+    name: "Linktree Growth",
+    image: linktree,
+    content:
+      "Leading the effort to increase the number of users that convert to a paid plan",
+    tags: ["Symfony", "React", "Tailwind CSS"],
+  },
   m365Growth: {
     year: 2021,
     name: "Microsoft 365 Growth",
@@ -195,14 +212,19 @@ export const personalProjects: { [key: string]: Project } = {
 } as const;
 
 export const socialLinks: { [key: string]: SocialLink } = {
+  linktree: {
+    name: "Linktree",
+    href: "https://linktr.ee/carles2m",
+    Icon: PiLinktreeLogo,
+  },
   linkedin: {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/carles2m",
-    Icon: BsLinkedin,
+    Icon: PiLinkedinLogo,
   },
   github: {
     name: "GitHub",
     href: "https://github.com/carles2m",
-    Icon: BsGithub,
+    Icon: PiGithubLogo,
   },
 } as const;
