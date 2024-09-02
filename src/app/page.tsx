@@ -18,14 +18,22 @@ import { getWeekDay, minuteInMs } from "../lib/dateUtil";
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
-  // useEffect only runs on the client, using it to determine whether we are ready to show the content
+  // useEffect only runs on the browser,
+  // which means that 'mounted' will only become true on the browser
+  // and will always be false during server-side rendering
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
     <div className="flex min-h-screen min-w-content flex-col items-center justify-start bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
-      {mounted ? <HomeContent /> : <></>}
+      {mounted ? (
+        <HomeContent />
+      ) : (
+        <noscript>
+          <HomeContent />
+        </noscript>
+      )}
     </div>
   );
 }
