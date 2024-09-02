@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes";
 import React from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
 
+import { PiMoon, PiSun } from "../lib/content";
 import { SocialLink } from "../lib/content.types";
 import { HeaderButton } from "./Header.Button";
 import { HeaderImage, HeaderImageProps } from "./Header.Image";
@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             <HeaderButton
               name="Toggle color mode"
-              Icon={resolvedTheme == "dark" ? BsSun : BsMoon}
+              Icon={resolvedTheme == "dark" ? PiSun : PiMoon}
               onClick={() =>
                 setTheme(resolvedTheme == "dark" ? "light" : "dark")
               }
