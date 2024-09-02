@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getYear } from "../lib/dateUtil";
+import { getYear, minuteInMs } from "../lib/dateUtil";
 import { Divider } from "./Divider";
 
 type FooterProps = {
@@ -8,14 +8,14 @@ type FooterProps = {
 };
 
 export const Footer: React.FC<FooterProps> = ({ profileName }) => {
-  const [year, setYear] = useState<number>();
+  const [year, setYear] = useState<number>(getYear());
 
   useEffect(() => {
     setYear(getYear());
 
     const interval = setInterval(() => {
       setYear(getYear());
-    }, 60000);
+    }, minuteInMs);
 
     return () => clearInterval(interval);
   }, []);

@@ -14,6 +14,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project }) => {
     threshold: 0.3,
     triggerOnce: true,
     fallbackInView: true,
+    initialInView: true, // set to true to make the component visible when JavaScript is disabled
   });
 
   return (
