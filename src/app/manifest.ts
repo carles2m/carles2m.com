@@ -55,7 +55,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: wide.src,
         sizes: "1280x800",
         type: "image/webp"
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: remove "as any" when the default type supports it
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: remove "as any" when screenshots type supports form_factor
       } as any
     ]
   };
