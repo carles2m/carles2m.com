@@ -33,13 +33,15 @@ export const Header: React.FC<HeaderProps> = ({
               <HeaderButton key={link.name} {...link} isExternal />
             ))}
 
-            <HeaderButton
-              name="Toggle color mode"
-              Icon={resolvedTheme == "dark" ? PiSun : PiMoon}
-              onClick={() =>
-                setTheme(resolvedTheme == "dark" ? "light" : "dark")
-              }
-            />
+            {resolvedTheme !== undefined && (
+              <HeaderButton
+                name="Toggle color mode"
+                Icon={resolvedTheme == "dark" ? PiSun : PiMoon}
+                onClick={() =>
+                  setTheme(resolvedTheme == "dark" ? "light" : "dark")
+                }
+              />
+            )}
           </div>
         </div>
       </div>
