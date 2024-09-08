@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex min-h-screen min-w-content flex-col items-center justify-start bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
+    <>
       {mounted ? (
         <HomeContent />
       ) : (
@@ -34,7 +34,7 @@ export default function Home() {
           <HomeContent />
         </noscript>
       )}
-    </div>
+    </>
   );
 }
 
@@ -50,7 +50,7 @@ const HomeContent = ({}) => {
   }, []);
 
   return (
-    <>
+    <div className="flex min-h-screen min-w-content flex-col items-center justify-start bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
       <Header
         profileName={profileName}
         profilePicture={profilePicture}
@@ -86,6 +86,6 @@ const HomeContent = ({}) => {
       </main>
 
       <Footer profileName={profileName} />
-    </>
+    </div>
   );
 };
