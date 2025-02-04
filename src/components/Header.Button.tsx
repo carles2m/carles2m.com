@@ -20,7 +20,7 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
     "group relative rounded-md bg-[unset] p-4 transition-colors ease-linear hover:bg-black/10 dark:hover:bg-white/15 motion-reduce:transition-none";
 
   const tooltip = (
-    <span className="invisible absolute -right-[20%] top-[110%] m-auto whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-white opacity-0 shadow-lg transition-all ease-linear group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100 motion-reduce:transition-none dark:bg-gray-200 dark:text-black">
+    <span className="invisible absolute -right-[20%] top-[110%] m-auto whitespace-nowrap rounded-sm bg-gray-800 px-2 py-1 text-white opacity-0 shadow-lg transition-all ease-linear group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100 motion-reduce:transition-none dark:bg-gray-200 dark:text-black">
       {name}
     </span>
   );

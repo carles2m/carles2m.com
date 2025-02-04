@@ -63,7 +63,7 @@ const HomeContent = ({}) => {
             <span>{day && `Happy ${day}!`}&nbsp;</span>
           </div>
 
-          <div className="max-w-max bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent">
+          <div className="max-w-max bg-linear-to-r from-red-500 to-purple-500 bg-clip-text text-transparent">
             I&apos;m {profileName}
           </div>
         </h1>

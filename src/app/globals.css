@@ -1,9 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-  .hyperlink {
-    @apply text-blue-800 underline dark:text-blue-300 underline-offset-2;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --padding-content: 1rem;
+
+  --container-content: 72rem;
+
+  --min-width-content: 24rem;
+
+  --animate-appear: appear 2s ease-in-out both;
+  --animate-boom: boom 0.5s ease-in-out both;
+
+  @keyframes appear {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
+  @keyframes boom {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+@utility hyperlink {
+  @apply text-blue-800 underline dark:text-blue-300 underline-offset-2;
 }

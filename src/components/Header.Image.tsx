@@ -12,7 +12,7 @@ export const HeaderImage = ({
 }: HeaderImageProps) => {
   const popoverContent = (
     <Image
-      className="invisible absolute top-[110%] m-auto min-w-[320px] rounded opacity-0 shadow-lg transition-all ease-linear peer-hover:visible peer-hover:opacity-100 peer-focus-visible:visible peer-focus-visible:opacity-100 motion-reduce:transition-none max-[512px]:-left-full"
+      className="invisible absolute top-[110%] m-auto min-w-[320px] rounded-sm opacity-0 shadow-lg transition-all ease-linear peer-hover:visible peer-hover:opacity-100 peer-focus-visible:visible peer-focus-visible:opacity-100 motion-reduce:transition-none max-[512px]:-left-full"
       src={profilePicture}
       alt={profileName}
       width={320}
