@@ -24,7 +24,7 @@
     "sharp": "0.34.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.9",
+    "@tailwindcss/postcss": "4.1.10",
     "@types/node": "22.15.31",
     "@types/react": "18.3.23",
     "@types/react-dom": "18.3.7",
@@ -35,7 +35,7 @@
     "postcss": "8.5.4",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.12",
-    "tailwindcss": "4.1.9",
+    "tailwindcss": "4.1.10",
     "typescript": "5.8.3"
   },
   "browserslist": [
