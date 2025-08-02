@@ -1,41 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:js-app"
-  ],
-  "labels": [
-    "dependencies"
-  ],
+  "extends": ["config:js-app"],
+  "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "eslint"
-      ],
-      "labels": [
-        "linting"
-      ]
+      "labels": ["linting"],
+      "matchPackageNames": ["/eslint/"]
     },
     {
-      "matchDepTypes": [
-        "optionalDependencies"
-      ],
-      "addLabels": [
-        "optional"
-      ]
+      "matchDepTypes": ["optionalDependencies"],
+      "addLabels": ["optional"]
     },
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true
     }
   ],
