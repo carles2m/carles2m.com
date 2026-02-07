@@ -22,7 +22,7 @@ export default function Home() {
   // which means that 'mounted' will only become true on the browser
   // and will always be false during server-side rendering
   useEffect(() => {
-    setMounted(true);
+    queueMicrotask(() => setMounted(true));
   }, []);
 
   return (

@@ -11,8 +11,6 @@ export const Footer: React.FC<FooterProps> = ({ profileName }) => {
   const [year, setYear] = useState<number>(getYear());
 
   useEffect(() => {
-    setYear(getYear());
-
     const interval = setInterval(() => {
       setYear(getYear());
     }, minuteInMs);
