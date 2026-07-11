@@ -29,7 +29,7 @@
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "8.54.0",
-    "eslint": "9.39.4",
+    "eslint": "9.39.5",
     "eslint-config-next": "16.2.10",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "postcss": "8.5.16",
