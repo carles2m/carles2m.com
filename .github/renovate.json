@@ -28,6 +28,11 @@
       "description": "TypeScript 7 breaks next build, and the typescript-eslint toolchain bundled in eslint-config-next declares peer typescript '>=4.8.4 <6.1.0'. Revisit once both support TS 7.",
       "matchPackageNames": ["typescript"],
       "allowedVersions": "<7"
+    },
+    {
+      "description": "eslint 10 breaks the plugin stack bundled in eslint-config-next: eslint-plugin-react fails with 'contextOrFilename.getFilename is not a function', and .mjs files fail with 'scopeManager.addGlobals is not a function'. Revisit once eslint-config-next ships eslint 10 support.",
+      "matchPackageNames": ["eslint"],
+      "allowedVersions": "<10"
     }
   ],
   "platformAutomerge": true,
