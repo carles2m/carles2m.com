@@ -18,6 +18,16 @@
     {
       "matchDepTypes": ["devDependencies"],
       "automerge": true
+    },
+    {
+      "description": "Never automerge majors - they need a human to check the build.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "TypeScript 7 breaks next build, and the typescript-eslint toolchain bundled in eslint-config-next declares peer typescript '>=4.8.4 <6.1.0'. Revisit once both support TS 7.",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
     }
   ],
   "platformAutomerge": true,
